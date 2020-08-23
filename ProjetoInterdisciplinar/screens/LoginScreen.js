@@ -1,12 +1,18 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
 
-export default class LoadingScreen extends React.Component {
+export default class LoginScreen extends React.Component {
 
     render() {
         LayoutAnimation.easeInEaseOut();
         return (
             <View style={styles.container}>
+
+                <Image
+                    source={require('./assets/cdpc-circular.png')}
+                    style={{ alignSelf: "center", marginTop: 32, height: 180, width: 180 }}
+                ></Image>
+
                 <Text style={styles.greeting}>{`Seja bem vindo,\nao aplicativo do CDPC`}</Text>
 
                 <View style={styles.form}>
