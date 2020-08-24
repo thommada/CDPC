@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image, LayoutAnimation, ScrollView } from 'react-native';
 
 export default class RegisterScreen extends React.Component {
 
@@ -9,85 +9,109 @@ export default class RegisterScreen extends React.Component {
             <ScrollView>
 
                 <Image
-                    source={require('./assets/cdpc-circular-100x100.png')}
-                    style={{ alignSelf: "center", marginTop: 32 }}
+                    source={require('../assets/cdpc-circular.png')}
+                    style={styles.logo}
                 ></Image>
 
-                <Text style={styles.greeting}>{`Insira seus dados pessoais e os dados da\n escola onde será entregue o experimento`}</Text>
+                <Text style={styles.greeting}>{`Insira seus dados pessoais e os dados da\n escola onde será entregue o experimento.`}</Text>
 
                 <View style={styles.form}>
 
                     <View>
-                        <Text style={{ textAlign: 'center', fontSize: 25 }}>Dados Pessoais</Text>
+                        <Text style={styles.title}>Dados Pessoais</Text>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Nome Completo</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Nome Completo</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o seu nome completo'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>CPF</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> CPF</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='XXX.XXX.XXX-XX'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Celular</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Celular</Text>
+                            </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='(XX)XXXXX-XXXX'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Email</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Email</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o seu email'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Senha</Text>
-                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Senha</Text>
+                            </Text>
+                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none' placeholder='Digite a sua senha para fazer login na plataforma'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Confirme a senha</Text>
-                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Confirme a senha</Text>
+                        </Text>
+                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none' placeholder='Digite sua senha novamente'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={{ textAlign: 'center', fontSize: 25 }}>Dados da escola</Text>
+                        <Text style={styles.title}>Dados da escola</Text>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Nome</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Nome</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o nome da escola'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>CEP</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> CEP</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o cep da escola'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Endereço</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Logradouro</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite sua Rua ou Avenida'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Número</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Número</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o número da sua residência'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Bairro</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}> Bairro</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o seu bairro'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
                         <Text style={styles.inputTitle}>Complemento</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Casa, apartamento, lote'></TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Telefone</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <Text style={{color: 'red'}}>*
+                            <Text style={styles.inputTitle}>Telefone</Text>
+                        </Text>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='(XX)XXXX-XXXX'></TextInput>
                     </View>
 
                 </View>
@@ -116,8 +140,12 @@ const styles = StyleSheet.create({
         marginBottom: 48,
         marginHorizontal: 30
     },
+    title: {
+        textAlign: 'center', 
+        fontSize: 25
+    },
     inputTitle: {
-        color: "#8A8F9E",
+        color: "#131416",
         fontSize: 16,
         textTransform: "uppercase"
     },
@@ -140,5 +168,11 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: '500'
+    },
+    logo: {
+        alignSelf: "center",
+        marginTop: 32,
+        height: 180,
+        width: 180
     }
 })

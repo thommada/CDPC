@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image, LayoutAnimation } from 'react-native';
 
 export default class LoginScreen extends React.Component {
 
@@ -9,8 +9,8 @@ export default class LoginScreen extends React.Component {
             <View style={styles.container}>
 
                 <Image
-                    source={require('./assets/cdpc-circular.png')}
-                    style={{ alignSelf: "center", marginTop: 32, height: 180, width: 180 }}
+                    source={require('../assets/cdpc-circular.png')}
+                    style={styles.logo}
                 ></Image>
 
                 <Text style={styles.greeting}>{`Seja bem vindo,\nao aplicativo do CDPC`}</Text>
@@ -18,11 +18,11 @@ export default class LoginScreen extends React.Component {
                 <View style={styles.form}>
                     <View>
                         <Text style={styles.inputTitle}>Email</Text>
-                        <TextInput style={styles.input} autoCapitalize='none'></TextInput>
+                        <TextInput style={styles.input} autoCapitalize='none' placeholder='Digite o seu email'></TextInput>
                     </View>
                     <View style={{ marginTop: 32 }}>
                         <Text style={styles.inputTitle}>Senha</Text>
-                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none'></TextInput>
+                        <TextInput style={styles.input} secureTextEntry autoCapitalize='none' placeholder='Digite a sua senha'></TextInput>
                     </View>
                 </View>
 
@@ -31,8 +31,8 @@ export default class LoginScreen extends React.Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{ alignSelf: 'center', marginTop: 32 }}>
-                    <Text style={{ color: '#8A8F9E', fontSize: 13 }}>
-                        É novo no CDPC? <Text style={{ color: '#228B22', fontWeight: '500' }}>Faça seu cadastro</Text>
+                    <Text style={styles.text}>
+                        É novo no CDPC? <Text style={styles.registerText}>Faça seu cadastro</Text>
                     </Text>
                 </TouchableOpacity>
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 30
     },
     inputTitle: {
-        color: "#8A8F9E",
+        color: "#131416",
         fontSize: 16,
         textTransform: "uppercase"
     },
@@ -78,6 +78,20 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
+        fontWeight: '500'
+    },
+    logo: {
+        alignSelf: "center",
+        marginTop: 32,
+        height: 180,
+        width: 180
+    },
+    text: {
+        color: '#8A8F9E',
+        fontSize: 13
+    },
+    registerText: {
+        color: '#228B22',
         fontWeight: '500'
     }
 })
