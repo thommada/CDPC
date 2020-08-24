@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, Dimensions, Button} from 'react-native';
-import Slider from './components/Slider';
+import Slider from '../components/Slider';
 
 const images = [
   require('../img/fotoex1.png'),
