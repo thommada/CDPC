@@ -1,83 +1,52 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Dimensions, Button} from 'react-native';
-import Slider from '../components/Slider';
+import React from 'react'
+import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
+import Style from '../styles/Experiment'
+import Slider from '../components/Slider'
 
 const images = [
-  require('../img/fotoex1.png'),
-  require('../img/fotoex2.png'),
-  require('../img/fotoex3.png')
+	require('../assets/img/fotoex1.png'),
+	require('../assets/img/fotoex2.png'),
+	require('../assets/img/fotoex3.png')
 ]
 
-const handlePress = () => false
+class ExperimentProfile extends React.Component {
+	render() {
+		return (
+			<ScrollView style={Style.container}>
 
-export default function App (){
-    return(
-      <View style={{flex:1}}>
-      <View style={styles.header}>
-        <Image 
-        style={styles.leftimg}
-        source={require('../img/voltar.png')}
-        />
-        <Text style={{textAlign:"center"}}>Perfil do Experimento</Text>
-        <Image 
-        style={styles.rightimg}
-        source={require('../img/logo.png')}
-        />
-      </View>
-      <View style={{flex:0.4,backgroundColor: '#C0C0C0'}}>
-        <Slider images={images}/>
-      </View>
-      <View style={{flex:0.1,backgroundColor: '#C0C0C0'}}>
-        <Text style={styles.texto}> Objetivo</Text>
-        <Text style= {{marginLeft:20, marginBottom: 5}}> Mostrar a influência que o atrito exerce sobre o movimento de um objeto.</Text>
-      </View>
-      <View style={{flex:0.1,backgroundColor: '#C0C0C0'}}>
-        <Text style={styles.texto}> Detalhes</Text>
-        <Text style={{color:'blue', marginLeft:20}}>PênduloFlutuante.pdf</Text>
-      </View>
-      <View style={{flex:0.1,backgroundColor: '#C0C0C0'}}>
-        <Text style={styles.texto}> Capacitação</Text>
-        <Text style={{marginLeft:20, marginBottom: 5}}> Sim, o empréstimo será realizado após a conclusão do treinamento</Text>
-      </View>
-      <View style={{flex:0.15,backgroundColor: '#C0C0C0'}}>
-      <Button
-          size="large"
-          onPress = {handlePress}
-          title = "Realizar empréstimo"
-          color = "green"
-        />
-      </View>
-      <StatusBar style="auto" />
-    </View>
-    )
-  }
+				<Text style={Style.title}>Disco Flutuante</Text>
 
-const styles = StyleSheet.create({
-  header:{
-    flex:0.15, 
-    backgroundColor: '#d3d3d3',
-    alignItems:'center',
-    justifyContent:'center'
-  },
+				<View>
+					<Slider images={images} />
+				</View>
 
-  rightimg:{
-    position:'absolute',
-    right:20
-  },
+				<View style={{ marginHorizontal: 15 }}>
+					<Text style={Style.subtitle}>Objetivo</Text>
+					<Text style={Style.text}>Mostrar a influência que o atrito exerce sobre o movimento de um objeto.</Text>
 
-  leftimg:{
-    position:'absolute',
-    left:20
-  },
+					<Text style={Style.subtitle}>Contexto</Text>
+					<Text style={Style.text}>O Princípio da Inércia, ou Primeira Lei de Newton, diz que "um objeto tende sempre a manter o seu estado de movimento, este podendo também ser o de repouso, se não houver a ação de forças externas". E o atrito, ou melhor, as forças de atrito, são na maioria dos casos, as responsáveis pelo fato de que não se observa comumente um objeto se deslocando continuamente sem a ação de uma outra força propulsora.</Text>
 
-  container: {
-    marginTop: 50
-  },
-  texto:{
-    fontWeight: 'bold',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 20,
-  }
-});
+					<Text style={Style.subtitle}>Materiais</Text>
+					<View style={{ marginLeft: 15 }}>
+						<Text style={Style.text}>{`a) Papelão\nb) Cartolina\nc) Caneta esferográfica\nd) Bexiga\ne) Fita Adesiva\nf) Cola`}</Text>
+					</View>
+
+					<Text style={Style.subtitle}>Capacitação</Text>
+					<Text style={Style.text}>Sim, o empréstimo será realizado após a conclusão do treinamento.</Text>
+
+					<Text style={Style.subtitle}>Mais Detalhes</Text>
+					<Text style={Style.textPDF}>PênduloFlutuante.pdf</Text>
+
+					<TouchableOpacity style={Style.button}>
+						<Text style={Style.buttonText}>Realizar Empréstimo</Text>
+					</TouchableOpacity>
+				</View>
+			</ScrollView>
+		)
+	}
+}
+export default ExperimentProfile
+
+
+
