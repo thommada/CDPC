@@ -30,7 +30,10 @@ class Login extends React.Component {
                     <Text style={Style.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ alignSelf: 'center', marginTop: 32 }}>
+                <TouchableOpacity 
+                    style={{ alignSelf: 'center', marginTop: 32 }}
+                    onPress={() => this.props.navigation.navigate("Register")}
+                >
                     <Text style={Style.text}>
                         É novo no CDPC? <Text style={Style.registerText}>Faça seu cadastro</Text>
                     </Text>

@@ -7,6 +7,7 @@ import About from './About'
 import ExperimentList from './ExperimentList'
 import Login from './Login'
 import ExperimentProfile from './ExperimentProfile'
+import Register from './Register'
 
 import Style from '../styles/LoginRegister'
 
@@ -53,6 +54,7 @@ function App() {
 				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Lista de Experimentos' }} />
 				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Login' }} />
 				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Tela de Experimentos' }} />
+				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
