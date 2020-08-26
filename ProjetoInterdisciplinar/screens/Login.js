@@ -12,7 +12,7 @@ class Login extends React.Component {
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}
-                    style={Style.logo}
+                    style={DefaultStyle.logo}
                 ></Image>
 
                 <Text style={Style.greetingLogin}>{`Seja bem vindo,\nao aplicativo do CDPC`}</Text>

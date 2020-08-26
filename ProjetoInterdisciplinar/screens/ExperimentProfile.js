@@ -14,7 +14,7 @@ const images = [
 class ExperimentProfile extends React.Component {
 	render() {
 		return (
-			<ScrollView style={Style.container}>
+			<ScrollView style={{backgroundColor: "whitesmoke"}}>
 
 				<Text style={Style.title}>Disco Flutuante</Text>
 

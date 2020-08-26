@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -14,7 +14,12 @@ import DefaultStyle from '../styles/DefaultStyle'
 function HomeScreen({ navigation }) {
 	return (
 		<View style={DefaultStyle.container}>
-			<Text style={styles.text}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência (CDPC)`}</Text>
+			<Image
+                source={require('../assets/img/cdpc-circular.png')}
+                style={DefaultStyle.logo}
+            ></Image>
+
+			<Text style={styles.text}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência`}</Text>
 
 			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('AboutScreen')}

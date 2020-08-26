@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "white"
+    backgroundColor: "whitesmoke"
   },
   containerCenter: {
     flex: 1,
@@ -25,5 +25,11 @@ export default StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: '500'
+  },
+  logo: {
+    alignSelf: "center",
+    height: 180,
+    width: 180,
+    marginTop: 25
   }
 })

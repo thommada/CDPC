@@ -34,12 +34,6 @@ export default StyleSheet.create({
         fontSize: 15,
         color: "#161F3D"
     },
-    logo: {
-        alignSelf: "center",
-        height: 180,
-        width: 180,
-        marginTop: 25
-    },
     text: {
         color: '#8A8F9E',
         fontSize: 13
