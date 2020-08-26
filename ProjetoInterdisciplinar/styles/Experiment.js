@@ -1,9 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-	container: {
-		flex: 1
-	},
 	title: {
 		marginTop: 50,
 		textAlign: 'center',
@@ -28,19 +25,5 @@ export default StyleSheet.create({
 		fontSize: 16,
 		textAlign: 'justify',
 		color: '#0000CD'
-	},
-	button: {
-		marginHorizontal: 30,
-		backgroundColor: "#228B22",
-		borderRadius: 4,
-		height: 52,
-		alignItems: "center",
-		justifyContent: "center",
-		marginBottom: 20,
-		marginTop: 20
-	},
-	buttonText: {
-		color: 'white',
-		fontWeight: '500'
 	}
 })

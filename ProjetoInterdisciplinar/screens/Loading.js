@@ -1,11 +1,13 @@
 import React from 'react'
 import { Text, View, ActivityIndicator, Image } from 'react-native'
+
 import Style from '../styles/Loading'
+import DefaultStyle from '../styles/DefaultStyle'
 
 class Loading extends React.Component {
     render() {
         return (
-            <View style={Style.container}>
+            <View style={DefaultStyle.containerCenter}>
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}

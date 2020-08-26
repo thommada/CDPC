@@ -1,6 +1,9 @@
 import React from 'react'
 import { Text, View, LayoutAnimation, ScrollView, UIManager, TouchableOpacity, Platform, SafeAreaView } from 'react-native'
+
 import Style from '../styles/ExperimentListStyle'
+import DefaultStyle from '../styles/DefaultStyle'
+
 
 class ExpandableItemComponent extends React.Component {
     constructor() {
@@ -80,7 +83,7 @@ class ExperimentList extends React.Component {
     };
     render() {
         return (
-            <View style={Style.container}>
+            <View style={DefaultStyle.container}>
                 <View style={Style.boxtitle}>
                     <Text style={Style.title}>Lista de Experimentos</Text>
                 </View>

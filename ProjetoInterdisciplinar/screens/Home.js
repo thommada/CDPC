@@ -9,35 +9,35 @@ import Login from './Login'
 import ExperimentProfile from './ExperimentProfile'
 import Register from './Register'
 
-import Style from '../styles/LoginRegister'
+import DefaultStyle from '../styles/DefaultStyle'
 
 function HomeScreen({ navigation }) {
 	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>{`Seja Bem vindo ao Portal do\n Centro de Divulgação e Popularização da Ciência (CDPC)`}</Text>
+		<View style={DefaultStyle.container}>
+			<Text style={styles.text}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência (CDPC)`}</Text>
 
-			<TouchableOpacity style={Style.button}
+			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('AboutScreen')}
 			>
-				<Text style={Style.buttonText}>Saiba mais sobre o CDPC</Text>
+				<Text style={DefaultStyle.buttonText}>Saiba mais sobre o CDPC</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={Style.button}
+			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('ExperimentListScreen')}
 			>
-				<Text style={Style.buttonText}>Experimentoteca</Text>
+				<Text style={DefaultStyle.buttonText}>Experimentoteca</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={Style.button}
+			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('LoginScreen')}
 			>
-				<Text style={Style.buttonText}>Tela de Login</Text>
+				<Text style={DefaultStyle.buttonText}>Tela de Login</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={Style.button}
+			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('ExperimentProfileScreen')}
 			>
-				<Text style={Style.buttonText}>Perfil do Experimento</Text>
+				<Text style={DefaultStyle.buttonText}>Perfil do Experimento</Text>
 			</TouchableOpacity>
 		</View>
 	);
@@ -52,8 +52,8 @@ function App() {
 				<Stack.Screen name="Principal" component={HomeScreen} />
 				<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC' }} />
 				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Lista de Experimentos' }} />
-				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Login' }} />
-				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Tela de Experimentos' }} />
+				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Faça o seu Login' }} />
+				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 			</Stack.Navigator>
 		</NavigationContainer>

@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center'
-    },
     greetingLogin: {
         marginBottom: 50,
         fontSize: 18,
@@ -37,19 +33,6 @@ export default StyleSheet.create({
         height: 40,
         fontSize: 15,
         color: "#161F3D"
-    },
-    button: {
-        marginHorizontal: 30,
-        backgroundColor: "#228B22",
-        borderRadius: 4,
-        height: 52,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: 15
-    },
-    buttonText: {
-        color: 'white',
-        fontWeight: '500'
     },
     logo: {
         alignSelf: "center",

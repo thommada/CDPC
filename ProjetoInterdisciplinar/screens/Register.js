@@ -1,13 +1,14 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, TextInput, Image, LayoutAnimation, ScrollView } from 'react-native'
-import Style from '../styles/LoginRegister'
 
+import Style from '../styles/LoginRegister'
+import DefaultStyle from '../styles/DefaultStyle'
 
 class Register extends React.Component {
     render() {
         LayoutAnimation.easeInEaseOut()
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor: "white"}}>
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}
@@ -110,15 +111,15 @@ class Register extends React.Component {
 
                     <View style={{ marginTop: 32 }}>
                         <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}>Telefone</Text>
+                            <Text style={Style.inputTitle}> Telefone</Text>
                         </Text>
                         <TextInput style={Style.input} autoCapitalize='none' placeholder='(XX)XXXX-XXXX'></TextInput>
                     </View>
 
                 </View>
 
-                <TouchableOpacity style={Style.button}>
-                    <Text style={Style.buttonText}>Cadastrar</Text>
+                <TouchableOpacity style={DefaultStyle.button}>
+                    <Text style={DefaultStyle.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
 
             </ScrollView>
@@ -126,4 +127,3 @@ class Register extends React.Component {
     }
 }
 export default Register
-

@@ -1,11 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "whitesmoke",
-    },
     boxtitle: {
         flex: 1,
         padding: 20,
@@ -42,5 +37,5 @@ export default StyleSheet.create({
         alignSelf: "center",
         height: 20,
         width: 20,
-    },
-});
+    }
+})

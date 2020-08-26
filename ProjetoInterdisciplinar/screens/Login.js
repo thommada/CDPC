@@ -1,12 +1,14 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, TextInput, Image, LayoutAnimation } from 'react-native'
+
 import Style from '../styles/LoginRegister'
+import DefaultStyle from '../styles/DefaultStyle'
 
 class Login extends React.Component {
     render() {
         LayoutAnimation.easeInEaseOut()
         return (
-            <View style={Style.container}>
+            <View style={DefaultStyle.container}>
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}
@@ -26,8 +28,8 @@ class Login extends React.Component {
                     </View>
                 </View>
 
-                <TouchableOpacity style={Style.button}>
-                    <Text style={Style.buttonText}>Entrar</Text>
+                <TouchableOpacity style={DefaultStyle.button}>
+                    <Text style={DefaultStyle.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity 

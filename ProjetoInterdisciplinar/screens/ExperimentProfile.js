@@ -1,7 +1,9 @@
 import React from 'react'
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import Style from '../styles/Experiment'
 import Slider from '../components/Slider'
+
+import Style from '../styles/Experiment'
+import DefaultStyle from '../styles/DefaultStyle'
 
 const images = [
 	require('../assets/img/fotoex1.png'),
@@ -38,8 +40,8 @@ class ExperimentProfile extends React.Component {
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
 					<Text style={Style.textPDF}>PênduloFlutuante.pdf</Text>
 
-					<TouchableOpacity style={Style.button}>
-						<Text style={Style.buttonText}>Realizar Empréstimo</Text>
+					<TouchableOpacity style={DefaultStyle.button}>
+						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
 					</TouchableOpacity>
 				</View>
 			</ScrollView>
@@ -47,6 +49,3 @@ class ExperimentProfile extends React.Component {
 	}
 }
 export default ExperimentProfile
-
-
-
