@@ -9,7 +9,7 @@ class ExpandableItemComponent extends React.Component {
             layoutHeight: 0,
         };
     }
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.item.isExpanded) {
             this.setState(() => {
                 return {
