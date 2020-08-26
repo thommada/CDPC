@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, LayoutAnimation, ScrollView, UIManager, TouchableOpacity, Plataform, Image } from 'react-native'
+import { Text, View, LayoutAnimation, ScrollView, UIManager, TouchableOpacity, Platform } from 'react-native'
 import Style from '../styles/ExperimentListStyle'
 
 class ExpandableItemComponent extends React.Component {
