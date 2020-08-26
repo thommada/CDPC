@@ -6,13 +6,12 @@ import DefaultStyle from '../styles/DefaultStyle'
 
 class Register extends React.Component {
     render() {
-        LayoutAnimation.easeInEaseOut()
         return (
             <ScrollView style={{backgroundColor: "whitesmoke"}}>
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}
-                    style={DefautStyle.logo}
+                    style={DefaultStyle.logo}
                 ></Image>
 
                 <Text style={Style.greetingRegister}>{`Insira seus dados pessoais e os dados da\n escola onde será entregue o experimento.`}</Text>

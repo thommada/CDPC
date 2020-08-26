@@ -10,7 +10,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white"
+    backgroundColor: "whitesmoke"
   },
   button: {
     marginHorizontal: 30,
