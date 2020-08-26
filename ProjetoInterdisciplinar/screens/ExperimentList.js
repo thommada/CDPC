@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, LayoutAnimation, ScrollView, UIManager, TouchableOpacity, Platform } from 'react-native'
+import { Text, View, LayoutAnimation, ScrollView, UIManager, TouchableOpacity, Platform, SafeAreaView } from 'react-native'
 import Style from '../styles/ExperimentListStyle'
 
 class ExpandableItemComponent extends React.Component {
@@ -84,7 +84,7 @@ class ExperimentList extends React.Component {
                 <View style={Style.boxtitle}>
                     <Text style={Style.title}>Lista de Experimentos</Text>
                 </View>
-                <View style={Style.box}>
+                <SafeAreaView style={Style.box}>
                     <ScrollView>
                         {this.state.listDataSource.map((item, key) => (
                             <ExpandableItemComponent
@@ -94,7 +94,7 @@ class ExperimentList extends React.Component {
                             />
                         ))}
                     </ScrollView>
-                </View>
+                </SafeAreaView>
             </View>
         )
     }
@@ -104,21 +104,48 @@ const CONTENT = [
     {
         isExpanded: false,
         category_name: 'Física',
-        subcategory: [{ id: 100, val: 'Pêndulo Livre', disp: true }, { id: 101, val: 'Disco flutuante', disp: false }, { id: 102, val: 'Energia de Movimento', disp: true }],
+        subcategory: [{ id: 101, val: 'Pêndulo Livre', disp: true }, { id: 102, val: 'Disco flutuante', disp: false }, { id: 103, val: 'Energia de Movimento', disp: true }],
     },
     {
         isExpanded: false,
         category_name: 'Química',
-        subcategory: [{ id: 200, val: 'Solução Tampão', disp: true }, { id: 201, val: 'Ácido-base', disp: false }],
+        subcategory: [{ id: 201, val: 'Solução Tampão', disp: true }, { id: 202, val: 'Ácido-base', disp: false }],
     },
     {
         isExpanded: false,
         category_name: 'Biologia',
-        subcategory: [{ id: 300, val: 'Deterioração do Plástico', disp: false }, { id: 301, val: 'Digestão', disp: true }],
+        subcategory: [{ id: 301, val: 'Deterioração do Plástico', disp: false }, { id: 302, val: 'Digestão', disp: true }],
     },
     {
         isExpanded: false,
         category_name: 'História',
-        subcategory: [{ id: 500, val: 'Segunda Guerra Mundial', disp: true }],
+        subcategory: [{ id: 401, val: 'Segunda Guerra Mundial', disp: true }, { id: 402, val: 'Guerra Fria', disp: false }],
     },
+    {
+        isExpanded: false,
+        category_name: 'Geografia',
+        subcategory: [{ id: 501, val: 'Montanhas', disp: false }],
+    },
+    {
+        isExpanded: false,
+        category_name: 'Eletrônica Digital',
+        subcategory: [{ id: 601, val: 'Switches', disp: true }],
+    },
+    {
+        isExpanded: false,
+        category_name: 'Eletrônica Analógica',
+        subcategory: [{ id: 701, val: 'Diodo', disp: true }],
+    },
+    {
+        isExpanded: false,
+        category_name: 'Circuitos Elétricos',
+        subcategory: [{ id: 801, val: 'Resistores', disp: true }],
+    },
+    {
+        isExpanded: false,
+        category_name: 'Microbiologia',
+        subcategory: [{ id: 901, val: 'Bacterias', disp: true }],
+    },
+
+    
 ];
