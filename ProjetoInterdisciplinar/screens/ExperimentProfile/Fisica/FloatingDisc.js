@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
+import { Text, View, ScrollView, TouchableOpacity, Linking } from 'react-native'
 import Slider from '../../../components/Slider'
 
 import Style from '../../../styles/Experiment'
@@ -36,7 +36,9 @@ class ExperimentProfile extends React.Component {
 					<Text style={Style.text}>Sim, o empréstimo será realizado após a conclusão do treinamento.</Text>
 
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
-					<TouchableOpacity>
+					<TouchableOpacity
+						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
+					>
 						<Text style={Style.textPDF}>DiscoFlutuante.pdf</Text>
 					</TouchableOpacity>
 
