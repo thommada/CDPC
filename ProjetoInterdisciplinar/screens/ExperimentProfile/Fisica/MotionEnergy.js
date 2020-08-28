@@ -16,8 +16,6 @@ class MotionEnergy extends React.Component {
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={DefaultStyle.title}>Energia de Movimento</Text>
-
 				<View>
 					<Slider images={images} />
 				</View>

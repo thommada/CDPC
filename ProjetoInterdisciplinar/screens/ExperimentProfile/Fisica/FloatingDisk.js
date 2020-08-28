@@ -16,8 +16,6 @@ class FloatingDisk extends React.Component {
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={DefaultStyle.title}>Disco Flutuante</Text>
-
 				<View>
 					<Slider images={images} />
 				</View>

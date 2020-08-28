@@ -16,8 +16,6 @@ class EnergyConservationI extends React.Component {
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={DefaultStyle.title}>Conservação de Energia I</Text>
-
 				<View>
 					<Slider images={images} />
 				</View>
