@@ -6,9 +6,12 @@ import { createStackNavigator } from '@react-navigation/stack'
 import About from './About'
 import ExperimentList from './ExperimentList'
 import Login from './Login'
-import ExperimentProfile from './ExperimentProfile/ExperimentProfile'
+import ExperimentProfile from '../screens/ExperimentProfile/ExperimentProfile'
 import Register from './Register'
 import Capacitation from './Capacitation'
+import FloatingDisc from '../screens/ExperimentProfile/Fisica/FloatingDisc'
+import EnergyConservationI from '../screens/ExperimentProfile/Fisica/EnergyConservationI'
+import MotionEnergy from '../screens/ExperimentProfile/Fisica/MotionEnergy'
 
 import DefaultStyle from '../styles/DefaultStyle'
 
@@ -68,6 +71,9 @@ function App() {
 				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 				<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />
+				<Stack.Screen name="FloatingDiscScreen" component={FloatingDisc} options={{ title: 'Disco Flutuante' }} />
+				<Stack.Screen name="MotionEnergyScreen" component={MotionEnergy} options={{ title: 'Energia de Movimento' }} />
+				<Stack.Screen name="EnergyConservationIScreen" component={EnergyConservationI} options={{ title: 'Conservação de Energia' }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

@@ -104,7 +104,7 @@ const CONTENT = [
     {
         isExpanded: false,
         category_name: 'Física',
-        subcategory: [{ id: 101, val: 'Pêndulo Livre', disp: true }, { id: 102, val: 'Disco flutuante', disp: false }, { id: 103, val: 'Energia de Movimento', disp: true }],
+        subcategory: [{ id: 101, val: 'Disco Flutuante', disp: true }, { id: 102, val: 'Energia de Movimento', disp: false }, { id: 103, val: 'Conservação de Energia', disp: true }],
     },
     {
         isExpanded: false,

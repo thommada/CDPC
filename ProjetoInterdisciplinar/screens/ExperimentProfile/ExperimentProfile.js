@@ -1,51 +1,63 @@
-import React from 'react'
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import Slider from '../../components/Slider'
+import * as React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 
-import Style from '../../styles/Experiment'
-import DefaultStyle from '../../styles/DefaultStyle'
-
-const images = [
-	require('../../assets/img/fotoex1.png'),
-	require('../../assets/img/fotoex2.png'),
-	require('../../assets/img/fotoex3.png')
-]
+import DefaultStyle from '../../styles/DefaultStyle.js'
 
 class ExperimentProfile extends React.Component {
 	render() {
-		return (
-			<ScrollView style={{backgroundColor: "whitesmoke"}}>
+        return (
+            <View style={DefaultStyle.container}>
+			<Image
+                source={require('../../assets/img/cdpc-circular.png')}
+                style={DefaultStyle.logo}
+            ></Image>
 
-				<Text style={Style.title}>Disco Flutuante</Text>
+			<Text style={styles.text}>{`Tela temporária para acessar os experimentos`}</Text>
 
-				<View>
-					<Slider images={images} />
-				</View>
+			<TouchableOpacity style={DefaultStyle.button}
+				onPress={() => this.props.navigation.navigate('FloatingDiscScreen')}
+			>
+				<Text style={DefaultStyle.buttonText}>Disco Flutuante</Text>
+			</TouchableOpacity>
 
-				<View style={{ marginHorizontal: 15, marginTop: 25 }}>
-					<Text style={Style.subtitle}>Objetivo</Text>
-					<Text style={Style.text}>Mostrar a influência que o atrito exerce sobre o movimento de um objeto.</Text>
+			<TouchableOpacity style={DefaultStyle.button}
+				onPress={() => this.props.navigation.navigate('MotionEnergyScreen')}
+			>
+				<Text style={DefaultStyle.buttonText}>Energia de Movimento</Text>
+			</TouchableOpacity>
 
-					<Text style={Style.subtitle}>Contexto</Text>
-					<Text style={Style.text}>O Princípio da Inércia, ou Primeira Lei de Newton, diz que "um objeto tende sempre a manter o seu estado de movimento, este podendo também ser o de repouso, se não houver a ação de forças externas". E o atrito, ou melhor, as forças de atrito, são na maioria dos casos, as responsáveis pelo fato de que não se observa comumente um objeto se deslocando continuamente sem a ação de uma outra força propulsora.</Text>
-
-					<Text style={Style.subtitle}>Materiais</Text>
-					<Text style={Style.text}>{`a) Papelão\nb) Cartolina\nc) Caneta esferográfica\nd) Bexiga\ne) Fita Adesiva\nf) Cola`}</Text>
-
-					<Text style={Style.subtitle}>Capacitação</Text>
-					<Text style={Style.text}>Sim, o empréstimo será realizado após a conclusão do treinamento.</Text>
-
-					<Text style={Style.subtitle}>Mais Detalhes</Text>
-					<TouchableOpacity>
-						<Text style={Style.textPDF}>PênduloFlutuante.pdf</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity style={DefaultStyle.button}>
-						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
-					</TouchableOpacity>
-				</View>
-			</ScrollView>
-		)
-	}
+			<TouchableOpacity style={DefaultStyle.button}
+				onPress={() => this.props.navigation.navigate('EnergyConservationIScreen')}
+			>
+				<Text style={DefaultStyle.buttonText}>Conservação de Energia</Text>
+			</TouchableOpacity>
+		</View>
+        )
+    }
 }
+
 export default ExperimentProfile
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		marginHorizontal: 10
+	},
+	text: {
+		textAlign: 'center',
+		fontWeight: 'bold',
+		marginBottom: 20
+	},
+	button: {
+		backgroundColor: "#228B22",
+		borderRadius: 4,
+		height: 52,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	buttonText: {
+		color: 'white',
+		fontWeight: '500'
+	},
+})

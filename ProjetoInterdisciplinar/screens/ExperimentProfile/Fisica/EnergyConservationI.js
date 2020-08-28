@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import Slider from '../../components/Slider'
+import Slider from '../../../components/Slider'
 
-import Style from '../../styles/Experiment'
-import DefaultStyle from '../../styles/DefaultStyle'
+import Style from '../../../styles/Experiment'
+import DefaultStyle from '../../../styles/DefaultStyle'
 
 const images = [
-	require('../../assets/img/fotoex1.png'),
-	require('../../assets/img/fotoex2.png'),
-	require('../../assets/img/fotoex3.png')
+	require('../../../assets/img/fotoex1.png'),
+	require('../../../assets/img/fotoex2.png'),
+	require('../../../assets/img/fotoex3.png')
 ]
 
 class ExperimentProfile extends React.Component {
