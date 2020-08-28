@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -9,7 +9,7 @@ import Login from './Login'
 import ExperimentProfile from '../screens/ExperimentProfile/ExperimentProfile'
 import Register from './Register'
 import Capacitation from './Capacitation'
-import FloatingDisc from '../screens/ExperimentProfile/Fisica/FloatingDisc'
+import FloatingDisk from './ExperimentProfile/Fisica/FloatingDisk'
 import EnergyConservationI from '../screens/ExperimentProfile/Fisica/EnergyConservationI'
 import MotionEnergy from '../screens/ExperimentProfile/Fisica/MotionEnergy'
 
@@ -19,11 +19,11 @@ function HomeScreen({ navigation }) {
 	return (
 		<View style={DefaultStyle.container}>
 			<Image
-                source={require('../assets/img/cdpc-circular.png')}
-                style={DefaultStyle.logo}
-            ></Image>
+				source={require('../assets/img/cdpc-circular.png')}
+				style={DefaultStyle.logo}
+			></Image>
 
-			<Text style={styles.text}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência`}</Text>
+			<Text style={DefaultStyle.textCenter}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência`}</Text>
 
 			<TouchableOpacity style={DefaultStyle.button}
 				onPress={() => navigation.navigate('AboutScreen')}
@@ -71,36 +71,11 @@ function App() {
 				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 				<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />
-				<Stack.Screen name="FloatingDiscScreen" component={FloatingDisc} options={{ title: 'Disco Flutuante' }} />
+				<Stack.Screen name="FloatingDiskScreen" component={FloatingDisk} options={{ title: 'Disco Flutuante' }} />
 				<Stack.Screen name="MotionEnergyScreen" component={MotionEnergy} options={{ title: 'Energia de Movimento' }} />
 				<Stack.Screen name="EnergyConservationIScreen" component={EnergyConservationI} options={{ title: 'Conservação de Energia' }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
 }
-
 export default App;
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		marginHorizontal: 10
-	},
-	text: {
-		textAlign: 'center',
-		fontWeight: 'bold',
-		marginBottom: 20
-	},
-	button: {
-		backgroundColor: "#228B22",
-		borderRadius: 4,
-		height: 52,
-		alignItems: "center",
-		justifyContent: "center",
-	},
-	buttonText: {
-		color: 'white',
-		fontWeight: '500'
-	},
-});

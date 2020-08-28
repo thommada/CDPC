@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, TextInput, Image, LayoutAnimation } from 'react-native'
+import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
@@ -31,7 +31,7 @@ class Login extends React.Component {
                     <Text style={DefaultStyle.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={{ alignSelf: 'center', marginTop: 32 }}
                     onPress={() => this.props.navigation.navigate("Register")}
                 >

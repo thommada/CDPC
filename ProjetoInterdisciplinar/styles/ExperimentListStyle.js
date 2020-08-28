@@ -10,7 +10,7 @@ export default StyleSheet.create({
     box: {
         flex: 5,
         justifyContent: "center",
-        alignItems: "stretch"
+        alignItems: "stretch",
     },
     title: {
         fontSize: 32,
@@ -37,5 +37,5 @@ export default StyleSheet.create({
         alignSelf: "center",
         height: 20,
         width: 20,
-    }
+    },
 })

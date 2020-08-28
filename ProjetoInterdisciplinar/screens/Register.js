@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, TextInput, Image, LayoutAnimation, ScrollView } from 'react-native'
+import { Text, View, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native'
 
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
@@ -7,7 +7,7 @@ import DefaultStyle from '../styles/DefaultStyle'
 class Register extends React.Component {
     render() {
         return (
-            <ScrollView style={{backgroundColor: "whitesmoke"}}>
+            <ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}

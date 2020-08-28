@@ -43,12 +43,12 @@ class ExpandableItemComponent extends React.Component {
                     style={Style.header}>
                     <Text style={Style.subtitle}>{this.props.item.category_name}</Text>
                 </TouchableOpacity>
-                <View 
-                    style={{height: this.state.layoutHeight, overflow: 'hidden',}}>
+                <View
+                    style={{ height: this.state.layoutHeight, overflow: 'hidden', }}>
                     {/*Content under the header of the Expandable List Item*/}
                     {this.props.item.subcategory.map((item, key) => (
-                        <TouchableOpacity key={key} style={Style.content} onPress={() => alert( 'Experimento ' + item.id + ': ' + '\n'+ item.val)}>   
-                            <Text style={Style.text}>Experimento {item.id}: {item.val} </Text>      
+                        <TouchableOpacity key={key} style={Style.content} onPress={() => alert('Experimento ' + item.id + ': ' + '\n' + item.val)}>
+                            <Text style={Style.text}>Experimento {item.id}: {item.val} </Text>
                         </TouchableOpacity>
                     ))}
                 </View>
@@ -147,5 +147,5 @@ const CONTENT = [
         subcategory: [{ id: 901, val: 'Bacterias', disp: true }],
     },
 
-    
+
 ];

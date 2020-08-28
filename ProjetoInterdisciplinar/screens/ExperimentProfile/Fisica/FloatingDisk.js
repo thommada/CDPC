@@ -11,12 +11,12 @@ const images = [
 	require('../../../assets/img/fotoex3.png')
 ]
 
-class ExperimentProfile extends React.Component {
+class FloatingDisk extends React.Component {
 	render() {
 		return (
-			<ScrollView style={{backgroundColor: "whitesmoke"}}>
+			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={Style.title}>Disco Flutuante</Text>
+				<Text style={DefaultStyle.title}>Disco Flutuante</Text>
 
 				<View>
 					<Slider images={images} />
@@ -39,15 +39,16 @@ class ExperimentProfile extends React.Component {
 					<TouchableOpacity
 						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
 					>
-						<Text style={Style.textPDF}>DiscoFlutuante.pdf</Text>
+						<Text style={DefaultStyle.link}>DiscoFlutuante.pdf</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity style={DefaultStyle.button}>
 						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
 					</TouchableOpacity>
 				</View>
+
 			</ScrollView>
 		)
 	}
 }
-export default ExperimentProfile
+export default FloatingDisk

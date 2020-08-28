@@ -11,12 +11,12 @@ const images = [
 	require('../../../assets/img/fotoex3.png')
 ]
 
-class ExperimentProfile extends React.Component {
+class MotionEnergy extends React.Component {
 	render() {
 		return (
-			<ScrollView style={{backgroundColor: "whitesmoke"}}>
+			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={Style.title}>Energia de Movimento</Text>
+				<Text style={DefaultStyle.title}>Energia de Movimento</Text>
 
 				<View>
 					<Slider images={images} />
@@ -39,16 +39,17 @@ class ExperimentProfile extends React.Component {
 					<TouchableOpacity
 						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
 					>
-						<Text style={Style.textPDF}>PênduloFlutuante.pdf</Text>
-						
+						<Text style={DefaultStyle.link}>PenduloFlutuante.pdf</Text>
+
 					</TouchableOpacity>
 
 					<TouchableOpacity style={DefaultStyle.button}>
 						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
 					</TouchableOpacity>
 				</View>
+
 			</ScrollView>
 		)
 	}
 }
-export default ExperimentProfile
+export default MotionEnergy

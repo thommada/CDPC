@@ -11,12 +11,12 @@ const images = [
 	require('../../../assets/img/fotoex3.png')
 ]
 
-class ExperimentProfile extends React.Component {
+class EnergyConservationI extends React.Component {
 	render() {
 		return (
-			<ScrollView style={{backgroundColor: "whitesmoke"}}>
+			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-				<Text style={Style.title}>Conservação de Energia I</Text>
+				<Text style={DefaultStyle.title}>Conservação de Energia I</Text>
 
 				<View>
 					<Slider images={images} />
@@ -28,7 +28,7 @@ class ExperimentProfile extends React.Component {
 
 					<Text style={Style.subtitle}>Contexto</Text>
 					<Text style={Style.text}>O Princípio da Conservação da Energia diz que " a energia pode ser transformada ou transferida, mas nunca criada ou destruída".
-                        Em um determinado sistema mecânico, em que formas de energia relacionadas a fenômenos eletromagnéticos ou fenômenos térmicos não estão presentes, pode-se dizer que a energia total do sistema é puramente mecânica. Desse modo, o Princípio da Conservação da Energia implica a conservação da energia mecânica. Esta, por sua vez, é a soma das quantidades de energia potencial e energia cinética. Embora a energia mecânica seja sempre constante, a quantidade de cada uma de suas componentes pode sofrer variação, de tal modo que a energia total permaneça constante.
+					Em um determinado sistema mecânico, em que formas de energia relacionadas a fenômenos eletromagnéticos ou fenômenos térmicos não estão presentes, pode-se dizer que a energia total do sistema é puramente mecânica. Desse modo, o Princípio da Conservação da Energia implica a conservação da energia mecânica. Esta, por sua vez, é a soma das quantidades de energia potencial e energia cinética. Embora a energia mecânica seja sempre constante, a quantidade de cada uma de suas componentes pode sofrer variação, de tal modo que a energia total permaneça constante.
                         Neste experimento podemos identificar uma transformação de um tipo de energia em outro. Inicialmente um objeto possui energia potencial gravitacional, que é a energia de interação entre a massa do objeto com a massa da Terra. Essa energia está armazenada no sistema Terra-objeto, e a energia vai diminuindo à medida que o objeto e a Terra se aproximam. A energia potencial gravitacional de um objeto, que é diretamente proporcional ao produto da sua massa, da aceleração da gravidade (g) e da sua distância vertical em relação a um ponto de referência,  se transforma em energia cinética do objeto, que está associada ao seu movimento. A energia cinética é diretamente proporcional à massa e ao quadrado da velocidade do objeto.</Text>
 
 					<Text style={Style.subtitle}>Materiais</Text>
@@ -41,15 +41,16 @@ class ExperimentProfile extends React.Component {
 					<TouchableOpacity
 						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
 					>
-						<Text style={Style.textPDF}>ConservaçãodeEnergiaI.pdf</Text>
+						<Text style={DefaultStyle.link}>ConservacaodeEnergiaI.pdf</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity style={DefaultStyle.button}>
 						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
 					</TouchableOpacity>
 				</View>
+
 			</ScrollView>
 		)
 	}
 }
-export default ExperimentProfile
+export default EnergyConservationI
