@@ -8,7 +8,6 @@ import ExperimentList from './ExperimentList'
 import Login from './Login'
 import ExperimentProfile from './ExperimentProfile'
 import Register from './Register'
-import Capacitation from './Capacitation'
 
 import DefaultStyle from '../styles/DefaultStyle'
 
@@ -45,12 +44,6 @@ function HomeScreen({ navigation }) {
 			>
 				<Text style={DefaultStyle.buttonText}>Perfil do Experimento</Text>
 			</TouchableOpacity>
-
-			<TouchableOpacity style={DefaultStyle.button}
-				onPress={() => navigation.navigate('CapacitationScreen')}
-			>
-				<Text style={DefaultStyle.buttonText}>Capacitação</Text>
-			</TouchableOpacity>
 		</View>
 	);
 }
@@ -67,7 +60,6 @@ function App() {
 				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Faça o seu Login' }} />
 				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
-				<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
