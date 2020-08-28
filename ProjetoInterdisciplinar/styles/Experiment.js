@@ -7,7 +7,7 @@ export default StyleSheet.create({
 		marginBottom: 20,
 		fontSize: 30,
 		fontWeight: 'bold',
-		color: '#111111'
+		color: '#111111',
 	},
 	subtitle: {
 		fontWeight: 'bold',
@@ -21,7 +21,7 @@ export default StyleSheet.create({
 		textAlign: 'justify',
 		color: '#333333',
 		marginHorizontal: 15,
-		lineHeight: 30
+		lineHeight: 30,
 	},
 	textPDF: {
 		marginTop: 10,

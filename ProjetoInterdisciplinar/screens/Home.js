@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import About from './About'
 import ExperimentList from './ExperimentList'
 import Login from './Login'
-import ExperimentProfile from './ExperimentProfile'
+import ExperimentProfile from './ExperimentProfile/ExperimentProfile'
 import Register from './Register'
 import Capacitation from './Capacitation'
 
