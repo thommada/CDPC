@@ -84,9 +84,6 @@ class ExperimentList extends React.Component {
     render() {
         return (
             <View style={DefaultStyle.container}>
-                <View style={Style.boxtitle}>
-                    <Text style={Style.title}>Lista de Experimentos</Text>
-                </View>
                 <SafeAreaView style={Style.box}>
                     <ScrollView>
                         {this.state.listDataSource.map((item, key) => (

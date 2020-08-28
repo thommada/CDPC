@@ -53,7 +53,7 @@ const style = StyleSheet.create({
 		width,
 		height
 	},
-	image: { width, height, resizeMode: 'cover' },
+	image: { width, height, resizeMode: 'cover'},
 	pagination: {
 		flexDirection: 'row',
 		position: 'absolute',
