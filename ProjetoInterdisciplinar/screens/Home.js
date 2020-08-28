@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -17,7 +17,7 @@ import DefaultStyle from '../styles/DefaultStyle'
 
 function HomeScreen({ navigation }) {
 	return (
-		<View style={DefaultStyle.container}>
+		<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 			<Image
 				source={require('../assets/img/cdpc-circular.png')}
 				style={DefaultStyle.logo}
@@ -54,7 +54,7 @@ function HomeScreen({ navigation }) {
 			>
 				<Text style={DefaultStyle.buttonText}>Capacitação</Text>
 			</TouchableOpacity>
-		</View>
+		</ScrollView>
 	);
 }
 
