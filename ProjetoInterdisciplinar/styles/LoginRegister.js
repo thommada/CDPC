@@ -25,7 +25,6 @@ export default StyleSheet.create({
     inputTitle: {
         color: "#131416",
         fontSize: 16,
-        textTransform: "uppercase",
     },
     input: {
         borderBottomColor: "#8A8F9E",

@@ -37,7 +37,7 @@ class EnergyConservationI extends React.Component {
 
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
 					<TouchableOpacity
-						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
+						onPress={() => Linking.openURL('https://drive.google.com/file/d/1ozSHuYnsNxYT6Uv3gY-UJUqFmzUivQP_/view?usp=sharing')}
 					>
 						<Text style={DefaultStyle.link}>ConservacaodeEnergiaI.pdf</Text>
 					</TouchableOpacity>

@@ -35,7 +35,7 @@ class FloatingDisk extends React.Component {
 
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
 					<TouchableOpacity
-						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
+						onPress={() => Linking.openURL('https://drive.google.com/file/d/1tOOaDgL1c_kVbrEWHM6FZyJ8N3qknlqP/view?usp=sharing')}
 					>
 						<Text style={DefaultStyle.link}>DiscoFlutuante.pdf</Text>
 					</TouchableOpacity>

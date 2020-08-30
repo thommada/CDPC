@@ -35,7 +35,7 @@ class MotionEnergy extends React.Component {
 
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
 					<TouchableOpacity
-						onPress={() => Linking.openURL('https://drive.google.com/file/d/1gUem9hCdKPy-mMZhmJYFp7I2yH_Egf_h/view?usp=sharing')}
+						onPress={() => Linking.openURL('https://drive.google.com/file/d/1b0UXD7cOK1sVLdBzJa661zVliyxO7ij5/view?usp=sharing')}
 					>
 						<Text style={DefaultStyle.link}>PenduloFlutuante.pdf</Text>
 
