@@ -9,7 +9,7 @@ const physics = [
     { id: 103, title: 'Conservação de Energia',  screen: 'EnergyConservationIScreen' },
 ]
 const chemistry = [
-    { id: 201, title: 'Ácido-Base',  screen: 'Genericexperiment' },
+    { id: 201, title: 'Ácido-Base',  screen: 'GenericExperiment' },
     { id: 202, title: 'Soluçao Tampão',  screen: 'GenericExperiment' },
 ]
 const biology = [
