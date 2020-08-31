@@ -12,7 +12,7 @@ import Capacitation from './Capacitation'
 import FloatingDisk from './ExperimentProfile/Fisica/FloatingDisk'
 import EnergyConservationI from '../screens/ExperimentProfile/Fisica/EnergyConservationI'
 import MotionEnergy from '../screens/ExperimentProfile/Fisica/MotionEnergy'
-
+import GenericExperiment from '../screens/ExperimentProfile/GenericExperiment'
 import DefaultStyle from '../styles/DefaultStyle'
 
 function HomeScreen({ navigation }) {
@@ -66,8 +66,9 @@ function App() {
 			<Stack.Navigator>
 				<Stack.Screen name="Principal" component={HomeScreen} />
 				<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC' }} />
-				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Lista de Experimentos' }} />
+				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Experimentoteca' }} />
 				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Faça o seu Login' }} />
+				<Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
 				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 				<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />

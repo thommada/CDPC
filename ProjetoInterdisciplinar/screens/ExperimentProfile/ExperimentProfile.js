@@ -31,6 +31,12 @@ class ExperimentProfile extends React.Component {
 				>
 					<Text style={DefaultStyle.buttonText}>Conservação de Energia</Text>
 				</TouchableOpacity>
+				
+				<TouchableOpacity style={DefaultStyle.button}
+					onPress={() => this.props.navigation.navigate('GenericExperiment')}
+				>
+					<Text style={DefaultStyle.buttonText}>Experimento Genérico</Text>
+				</TouchableOpacity> 
 			</View>
 		)
 	}

@@ -13,16 +13,26 @@ export default StyleSheet.create({
     box: {
         flex: 6,
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "flex-start",
+        padding: 10,
     },
     header: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: "100",
     },
+    boxheader: {
+        paddingTop: 20,
+        paddingLeft: 10,
+
+    },
     text: {
-        fontSize: 20,
+        fontSize: 18,
         color: "black",
         fontWeight: "normal",
-        paddingLeft: 15,
+    },
+    boxtext: {
+        paddingVertical: 5,
+        paddingLeft: 40,
+
     },
 })
