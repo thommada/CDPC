@@ -6,7 +6,7 @@ import DefaultStyle from '../styles/DefaultStyle'
 const { width } = Dimensions.get("window")
 const height = width * 0.6
 
-class About extends React.Component {
+class Astronomy extends React.Component {
     render() {
         return (
             <ScrollView style={{ backgroundColor: "whitesmoke" }}>
@@ -44,4 +44,4 @@ class About extends React.Component {
         )
     }
 }
-export default About
+export default Astronomy
