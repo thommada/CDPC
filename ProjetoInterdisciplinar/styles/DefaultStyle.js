@@ -55,6 +55,15 @@ export default StyleSheet.create({
 		color: '#333333',
 		lineHeight: 30,
 	},
+	textBold: {
+		textAlign: "justify",
+		marginBottom: 25,
+		marginHorizontal: 15,
+		fontSize: 18,
+		fontWeight: 'bold',
+		color: '#333333',
+		lineHeight: 30,
+	},
 	title: {
 		marginHorizontal: 15,
 		marginTop: 25,

@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import About from './About'
 import ExperimentList from './ExperimentList'
 import Login from './Login'
-import ExperimentProfile from '../screens/ExperimentProfile/ExperimentProfile'
+import Astronomia from '../screens/Astronomia'
 import Register from './Register'
 import Capacitation from './Capacitation'
 import FloatingDisk from './ExperimentProfile/Fisica/FloatingDisk'
@@ -44,9 +44,9 @@ function HomeScreen({ navigation }) {
 			</TouchableOpacity>
 
 			<TouchableOpacity style={DefaultStyle.button}
-				onPress={() => navigation.navigate('ExperimentProfileScreen')}
+				onPress={() => navigation.navigate('AstronomiaScreen')}
 			>
-				<Text style={DefaultStyle.buttonText}>Perfil do Experimento</Text>
+				<Text style={DefaultStyle.buttonText}>Grupo Astronomia (G-DAI)</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity style={DefaultStyle.button}
@@ -69,7 +69,7 @@ function App() {
 				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Experimentoteca' }} />
 				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Faça o seu Login' }} />
 				<Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
-				<Stack.Screen name="ExperimentProfileScreen" component={ExperimentProfile} options={{ title: 'Perfil do Experimento' }} />
+				<Stack.Screen name="AstronomiaScreen" component={Astronomia} options={{ title: 'G-DAI' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
 				<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />
 				<Stack.Screen name="FloatingDiskScreen" component={FloatingDisk} options={{ title: 'Disco Flutuante' }} />
