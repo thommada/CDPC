@@ -17,7 +17,7 @@ import DefaultStyle from '../styles/DefaultStyle'
 
 function HomeScreen({ navigation }) {
 	return (
-		<ScrollView style={{ backgroundColor: "whitesmoke" }}>
+		<ScrollView style={{ backgroundColor: "whitesmoke", marginTop: 50 }}>
 			<Image
 				source={require('../assets/img/cdpc-circular.png')}
 				style={DefaultStyle.logo}
@@ -64,10 +64,10 @@ function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen name="Principal" component={HomeScreen} />
-				<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC' }} />
+				<Stack.Screen name="Principal" component={HomeScreen} options={{ headerShown: false }}/>
+				<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC'}} />
 				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Experimentoteca' }} />
-				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Faça o seu Login' }} />
+				<Stack.Screen name="LoginScreen" component={Login} options={{ headerShown: false }} />
 				<Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
 				<Stack.Screen name="AstronomyScreen" component={Astronomy} options={{ title: 'G-DAI' }} />
 				<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
