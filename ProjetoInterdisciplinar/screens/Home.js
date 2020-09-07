@@ -64,7 +64,7 @@ function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen name="Principal" component={HomeScreen} options={{ headerShown: false }}/>
+				<Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
 				<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC'}} />
 				<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Experimentoteca' }} />
 				<Stack.Screen name="LoginScreen" component={Login} options={{ title: 'Login' }} />
