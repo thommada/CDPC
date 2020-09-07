@@ -1,6 +1,6 @@
 # CDPC
 
-<p>Altere o caminho em '/node_modules/expo/AppEntry.js/' de '../../App' para '../../screens/Home.js'
+<p>Altere o caminho em '/node_modules/expo/AppEntry.js/' de '../../App' para '../../screens/Home'
 
 ## Para navegação entre telas:
 
