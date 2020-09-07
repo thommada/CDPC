@@ -7,15 +7,15 @@ import firebase from '../components/firebase/config'
 
 class Register extends React.Component {
     constructor() {
-		super();
-		
-		this.dbRef = firebase.firestore().collection('users');
+        super();
 
-		this.state = {
-			nameUser: '',
-			cpfUser: '',
-			cellUser: '',
-			emailUser: '',
+        this.dbRef = firebase.firestore().collection('users');
+
+        this.state = {
+            nameUser: '',
+            cpfUser: '',
+            cellUser: '',
+            emailUser: '',
             password: '',
             confirmPassword: '',
             nameSchool: '',
@@ -25,75 +25,96 @@ class Register extends React.Component {
             neighborhoodSchool: '',
             referenceSchool: '',
             phoneSchool: '',
-			isLoading: false
-		};
+            isLoading: false
+        };
     }
-    
+
     inputValueUpdate = (val, prop) => {
-		const state = this.state;
-		state[prop] = val;
-		this.setState(state);
-	}
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
+    }
 
-	storeUser() {
-		if (this.state.nameUser === '') {
-			alert('Digite o nome do Usuario')
-		} else {
-			this.setState({
-				isLoading: true,
-			});
-			this.dbRef.add({
-				nameUser: this.state.nameUser,
-				cpfUser: this.state.cpfUser,
-				cellUser: this.state.cellUser,
-				emailUser: this.state.emailUser,
-                password: this.state.password,
-                confirmPassword: this.state.confirmPassword,
-                nameSchool: this.state.nameSchool,
-                cepSchool: this.state.cepSchool,
-                streetSchool: this.state.streetSchool,
-                numberSchool: this.state.numberSchool,
-                neighborhoodSchool: this.state.neighborhoodSchool,
-                referenceSchool: this.state.referenceSchool,
-                phoneSchool: this.state.phoneSchool
+    storeUser() {
+        if (this.state.nameUser === '' || this.state.emailUser === '' || this.state.password === '' || this.state.confirmPassword === '') {
+            alert('Verifique os dados e tente novamente')
+            this.setState({
+                isLoading: false,
+            });
+        } else {
+            this.setState({
+                isLoading: true,
+            });
 
-			}).then((res) => {
-				this.setState({
-                    nameUser: '',
-                    cpfUser: '',
-                    cellUser: '',
-                    emailUser: '',
-                    password: '',
-                    confirmPassword: '',
-                    nameSchool: '',
-                    cepSchool: '',
-                    streetSchool: '',
-                    numberSchool: '',
-                    neighborhoodSchool: '',
-                    referenceSchool: '',
-                    phoneSchool: '',
-                    isLoading: false
-				})
-				this.props.navigation.navigate('Home')
-			})
-				.catch((err) => {
-					console.error("Error found: ", err);
-					this.setState({
-						isLoading: false,
-					});
-				});
-		}
-	}
+            if (this.state.password !== this.state.confirmPassword) {
+                alert("Passwords don't match.")
+                this.setState({
+                    isLoading: false,
+                });
+                return
+            }
 
+            firebase.auth().createUserWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
+                const uid = response.user.uid
+                const login = {
+                    id: uid,
+                    nameUser: this.state.nameUser,
+                    cpfUser: this.state.cpfUser,
+                    cellUser: this.state.cellUser,
+                    emailUser: this.state.emailUser,
+                    password: this.state.password,
+                    confirmPassword: this.state.confirmPassword,
+                    nameSchool: this.state.nameSchool,
+                    cepSchool: this.state.cepSchool,
+                    streetSchool: this.state.streetSchool,
+                    numberSchool: this.state.numberSchool,
+                    neighborhoodSchool: this.state.neighborhoodSchool,
+                    referenceSchool: this.state.referenceSchool,
+                    phoneSchool: this.state.phoneSchool
+                };
+                this.dbRef.doc(uid).set(login).then(() => {
+                    this.setState({
+                        nameUser: '',
+                        cpfUser: '',
+                        cellUser: '',
+                        emailUser: '',
+                        password: '',
+                        confirmPassword: '',
+                        nameSchool: '',
+                        cepSchool: '',
+                        streetSchool: '',
+                        numberSchool: '',
+                        neighborhoodSchool: '',
+                        referenceSchool: '',
+                        phoneSchool: '',
+                        isLoading: false
+                    })
+                    this.props.navigation.navigate('Home')
+                }).catch((err) => {
+                    alert(err)
+                    console.error("Error found: ", err);
+                    this.setState({
+                        isLoading: false,
+                    });
+                });
+            }).catch((error) => {
+                alert(error)
+            });
+        }
+    }
 
     render() {
         if (this.state.isLoading) {
-			return (
-				<View style={{left: 0, right: 0, top: 0, bottom: 0, position: 'absolute', alignItems: 'center', justifyContent: 'center'}}>
-					<ActivityIndicator size="large" color="#9E9E9E" />
-				</View>
-			)
-		}
+            return (
+                <View style={{ left: 0, right: 0, top: 0, bottom: 0, position: 'absolute', alignItems: 'center', justifyContent: 'center' }}>
+                    <Image
+                        source={require('../assets/img/cdpc-circular.png')}
+                        style={DefaultStyle.logo}
+                    ></Image>
+                    <ActivityIndicator size="large" color="#9E9E9E" />
+                </View>
+            )
+        }
         return (
             <ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
@@ -114,12 +135,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Email</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o seu email'
                             value={this.state.emailUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'emailUser')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'emailUser')}>
                         </TextInput>
                     </View>
 
@@ -127,13 +148,13 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Senha</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            secureTextEntry 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            secureTextEntry
+                            autoCapitalize='none'
                             placeholder='Digite a sua senha para fazer login na plataforma'
                             value={this.state.password}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'password')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'password')}>
                         </TextInput>
                     </View>
 
@@ -141,13 +162,13 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Confirme a senha</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            secureTextEntry 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            secureTextEntry
+                            autoCapitalize='none'
                             placeholder='Digite sua senha novamente'
                             value={this.state.confirmPassword}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'confirmPassword')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'confirmPassword')}>
                         </TextInput>
                     </View>
 
@@ -159,12 +180,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Nome completo</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o seu nome completo'
                             value={this.state.nameUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'nameUser')}>  
+                            onChangeText={(val) => this.inputValueUpdate(val, 'nameUser')}>
                         </TextInput>
                     </View>
 
@@ -172,9 +193,9 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> CPF</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='XXX.XXX.XXX-XX'
                             value={this.state.cpfUser}
                             onChangeText={(val) => this.inputValueUpdate(val, 'cpfUser')}>
@@ -185,12 +206,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Celular</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='(XX)XXXXX-XXXX'
                             value={this.state.cellUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'cellUser')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'cellUser')}>
                         </TextInput>
                     </View>
 
@@ -202,12 +223,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Nome</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o nome da escola'
                             value={this.state.nameSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'nameSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'nameSchool')}>
                         </TextInput>
                     </View>
 
@@ -215,9 +236,9 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> CEP</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o cep da escola'
                             value={this.state.cepSchool}
                             onChangeText={(val) => this.inputValueUpdate(val, 'cepSchool')}>
@@ -228,12 +249,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Logradouro</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite sua Rua ou Avenida'
                             value={this.state.streetSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'streetSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'streetSchool')}>
                         </TextInput>
                     </View>
 
@@ -241,12 +262,12 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Número</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o número da sua residência'
                             value={this.state.numberSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'numberSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'numberSchool')}>
                         </TextInput>
                     </View>
 
@@ -254,23 +275,23 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Bairro</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Digite o seu bairro'
                             value={this.state.neighborhoodSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'neighborhoodSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'neighborhoodSchool')}>
                         </TextInput>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
                         <Text style={Style.inputTitle}>Ponto de referência</Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='Perto da igreja São Judas Tadeu'
                             value={this.state.referenceSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'referenceSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'referenceSchool')}>
                         </TextInput>
                     </View>
 
@@ -278,21 +299,21 @@ class Register extends React.Component {
                         <Text style={{ color: 'red' }}>*
                             <Text style={Style.inputTitle}> Telefone</Text>
                         </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
+                        <TextInput
+                            style={Style.input}
+                            autoCapitalize='none'
                             placeholder='(XX)XXXX-XXXX'
                             value={this.state.phoneSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'phoneSchool')}> 
+                            onChangeText={(val) => this.inputValueUpdate(val, 'phoneSchool')}>
                         </TextInput>
                     </View>
 
                 </View>
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={DefaultStyle.button}
                     onPress={() => this.storeUser()}>
-                        <Text style={DefaultStyle.buttonText}>Cadastrar</Text>
+                    <Text style={DefaultStyle.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
 
             </ScrollView>
