@@ -107,46 +107,7 @@ class Register extends React.Component {
                 <View style={Style.form}>
 
                     <View>
-                        <Text style={Style.title}>Dados Pessoais</Text>
-                    </View>
-
-                    <View style={{ marginTop: 32 }}>
-                        <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}> Nome Completo</Text>
-                        </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
-                            placeholder='Digite o seu nome completo'
-                            value={this.state.nameUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'nameUser')}>  
-                        </TextInput>
-                    </View>
-
-                    <View style={{ marginTop: 32 }}>
-                        <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}> CPF</Text>
-                        </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
-                            placeholder='XXX.XXX.XXX-XX'
-                            value={this.state.cpfUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'cpfUser')}>
-                        </TextInput>
-                    </View>
-
-                    <View style={{ marginTop: 32 }}>
-                        <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}> Celular</Text>
-                        </Text>
-                        <TextInput 
-                            style={Style.input} 
-                            autoCapitalize='none' 
-                            placeholder='(XX)XXXXX-XXXX'
-                            value={this.state.cellUser}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'cellUser')}> 
-                        </TextInput>
+                        <Text style={Style.title}>Informações de Login</Text>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
@@ -187,6 +148,49 @@ class Register extends React.Component {
                             placeholder='Digite sua senha novamente'
                             value={this.state.confirmPassword}
                             onChangeText={(val) => this.inputValueUpdate(val, 'confirmPassword')}> 
+                        </TextInput>
+                    </View>
+
+                    <View style={{ marginTop: 32 }}>
+                        <Text style={Style.title}>Dados Pessoais</Text>
+                    </View>
+
+                    <View style={{ marginTop: 32 }}>
+                        <Text style={{ color: 'red' }}>*
+                            <Text style={Style.inputTitle}> Nome Completo</Text>
+                        </Text>
+                        <TextInput 
+                            style={Style.input} 
+                            autoCapitalize='none' 
+                            placeholder='Digite o seu nome completo'
+                            value={this.state.nameUser}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'nameUser')}>  
+                        </TextInput>
+                    </View>
+
+                    <View style={{ marginTop: 32 }}>
+                        <Text style={{ color: 'red' }}>*
+                            <Text style={Style.inputTitle}> CPF</Text>
+                        </Text>
+                        <TextInput 
+                            style={Style.input} 
+                            autoCapitalize='none' 
+                            placeholder='XXX.XXX.XXX-XX'
+                            value={this.state.cpfUser}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'cpfUser')}>
+                        </TextInput>
+                    </View>
+
+                    <View style={{ marginTop: 32 }}>
+                        <Text style={{ color: 'red' }}>*
+                            <Text style={Style.inputTitle}> Celular</Text>
+                        </Text>
+                        <TextInput 
+                            style={Style.input} 
+                            autoCapitalize='none' 
+                            placeholder='(XX)XXXXX-XXXX'
+                            value={this.state.cellUser}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'cellUser')}> 
                         </TextInput>
                     </View>
 
