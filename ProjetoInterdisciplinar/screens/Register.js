@@ -47,11 +47,10 @@ class Register extends React.Component {
             });
 
             if (this.state.password !== this.state.confirmPassword) {
-                alert("Passwords don't match.")
+                alert("As senhas não coincidem")
                 this.setState({
                     isLoading: false,
                 });
-                return
             }
 
             firebase.auth().createUserWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
@@ -99,6 +98,9 @@ class Register extends React.Component {
                 });
             }).catch((error) => {
                 alert(error)
+                this.setState({
+                    isLoading: false,
+                });
             });
         }
     }
