@@ -23,7 +23,7 @@ class Register extends React.Component {
             streetSchool: '',
             numberSchool: '',
             neighborhoodSchool: '',
-            complementSchool: '',
+            referenceSchool: '',
             phoneSchool: '',
 			isLoading: false
 		};
@@ -54,7 +54,7 @@ class Register extends React.Component {
                 streetSchool: this.state.streetSchool,
                 numberSchool: this.state.numberSchool,
                 neighborhoodSchool: this.state.neighborhoodSchool,
-                complementSchool: this.state.complementSchool,
+                referenceSchool: this.state.referenceSchool,
                 phoneSchool: this.state.phoneSchool
 
 			}).then((res) => {
@@ -70,7 +70,7 @@ class Register extends React.Component {
                     streetSchool: '',
                     numberSchool: '',
                     neighborhoodSchool: '',
-                    complementSchool: '',
+                    referenceSchool: '',
                     phoneSchool: '',
                     isLoading: false
 				})
@@ -107,7 +107,7 @@ class Register extends React.Component {
                 <View style={Style.form}>
 
                     <View>
-                        <Text style={Style.title}>Informações de Login</Text>
+                        <Text style={Style.title}>Informações de login</Text>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
@@ -152,12 +152,12 @@ class Register extends React.Component {
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={Style.title}>Dados Pessoais</Text>
+                        <Text style={Style.title}>Dados pessoais</Text>
                     </View>
 
                     <View style={{ marginTop: 32 }}>
                         <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}> Nome Completo</Text>
+                            <Text style={Style.inputTitle}> Nome completo</Text>
                         </Text>
                         <TextInput 
                             style={Style.input} 
@@ -264,13 +264,13 @@ class Register extends React.Component {
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={Style.inputTitle}>Complemento</Text>
+                        <Text style={Style.inputTitle}>Ponto de referência</Text>
                         <TextInput 
                             style={Style.input} 
                             autoCapitalize='none' 
-                            placeholder='Casa, apartamento, lote'
-                            value={this.state.complementSchool}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'complementSchool')}> 
+                            placeholder='Perto da igreja São Judas Tadeu'
+                            value={this.state.referenceSchool}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'referenceSchool')}> 
                         </TextInput>
                     </View>
 
