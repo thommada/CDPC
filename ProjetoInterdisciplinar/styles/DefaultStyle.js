@@ -31,6 +31,14 @@ export default StyleSheet.create({
 		height: 180,
 		width: 180,
 		marginTop: 25,
+		marginBottom: 15,
+	},
+	logoSmall: {
+		alignSelf: "center",
+		height: 60,
+		width: 60,
+		marginTop: 25,
+		marginBottom: 15,
 	},
 	text: {
 		fontSize: 16,
@@ -87,4 +95,9 @@ export default StyleSheet.create({
 		marginBottom: 25,
 		textDecorationLine: 'underline',
 	},
+	horizontal: {
+		alignItems: 'center', 
+		flexDirection: 'row', 
+		justifyContent: 'space-around',
+	}
 })

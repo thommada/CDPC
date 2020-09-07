@@ -14,7 +14,7 @@ class Register extends React.Component {
                     style={DefaultStyle.logo}
                 ></Image>
 
-                <Text style={Style.greetingRegister}>{`Insira seus dados pessoais e os dados da\n escola onde será entregue o experimento.`}</Text>
+                <Text style={Style.greetingRegister}>{`Insira seus dados pessoais e os dados da\n escola onde será entregue o experimento`}</Text>
 
                 <View style={Style.form}>
 

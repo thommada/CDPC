@@ -14,7 +14,7 @@ class Login extends React.Component {
                     style={DefaultStyle.logo}
                 ></Image>
 
-                <Text style={Style.greetingLogin}>{`Seja bem vindo (a),\nao aplicativo do CDPC`}</Text>
+                <Text style={Style.greetingLogin}>{`Seja bem vindo (a)\nao aplicativo do CDPC`}</Text>
 
                 <View style={Style.form}>
                     <View>
