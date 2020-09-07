@@ -2,20 +2,25 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore'
 
+// Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyCYhRt791NBDFsR4PTKkltQKLiwr1-y8Uk",
-    authDomain: "cdpc-246a8.firebaseapp.com",
-    databaseURL: "https://cdpc-246a8.firebaseio.com",
-    projectId: "cdpc-246a8",
-    storageBucket: "cdpc-246a8.appspot.com",
-    messagingSenderId: "658585488735",
-    appId: "1:658585488735:web:76b12ac7c805c7885cbaea",
-    measurementId: "G-GBGY7YHNYZ"
-};
+    apiKey: "AIzaSyCOVPPTpBHjJoafmFBoNh3WwB9bxnHPd4A",
+    authDomain: "cdpc-326f1.firebaseapp.com",
+    databaseURL: "https://cdpc-326f1.firebaseio.com",
+    projectId: "cdpc-326f1",
+    storageBucket: "cdpc-326f1.appspot.com",
+    messagingSenderId: "368958949032",
+    appId: "1:368958949032:web:ef1606063f02350b1de49d"
+  }
 
+// Initialize Firebase
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 }
-
 export { firebase };
+
+
+
+
+
+  
