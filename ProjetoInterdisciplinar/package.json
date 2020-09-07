@@ -26,5 +26,21 @@
     "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0"
   },
-  "private": true
+  "private": true,
+  "name": "projetointerdisciplinar",
+  "version": "1.0.0",
+  "description": "CDPC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gordodemoniaco/CDPC.git"
+  },
+  "keywords": [
+    "cdpc"
+  ],
+  "author": "IFSULDEMINAS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gordodemoniaco/CDPC/issues"
+  },
+  "homepage": "https://github.com/gordodemoniaco/CDPC#readme"
 }
