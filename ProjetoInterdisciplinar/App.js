@@ -1,38 +1,7 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
-import Home from './screens/Home'
-import About from './screens/About'
-import ExperimentList from './screens/ExperimentList'
-import Login from './screens/Login'
-import Astronomy from './screens/Astronomy'
-import Register from './screens/Register'
-import Capacitation from './screens/Capacitation'
-import FloatingDisk from './screens/ExperimentProfile/Fisica/FloatingDisk'
-import EnergyConservationI from './screens/ExperimentProfile/Fisica/EnergyConservationI'
-import MotionEnergy from './screens/ExperimentProfile/Fisica/MotionEnergy'
-import GenericExperiment from './screens/ExperimentProfile/GenericExperiment'
-
-const Stack = createStackNavigator();
-
-function MyStack() {
-	return (
-		<Stack.Navigator>
-			<Stack.Screen name="LoginScreen" component={Login} options={{ headerShown: false }} />
-			<Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-			<Stack.Screen name="AboutScreen" component={About} options={{ title: 'Sobre o CDPC' }} />
-			<Stack.Screen name="ExperimentListScreen" component={ExperimentList} options={{ title: 'Experimentoteca' }} />
-			<Stack.Screen name="AstronomyScreen" component={Astronomy} options={{ title: 'G-DAI' }} />
-			<Stack.Screen name="Register" component={Register} options={{ title: 'Registre-se' }} />
-			<Stack.Screen name="CapacitationScreen" component={Capacitation} options={{ title: 'Capacitação' }} />
-			<Stack.Screen name="FloatingDiskScreen" component={FloatingDisk} options={{ title: 'Disco Flutuante' }} />
-			<Stack.Screen name="MotionEnergyScreen" component={MotionEnergy} options={{ title: 'Energia de Movimento' }} />
-			<Stack.Screen name="EnergyConservationIScreen" component={EnergyConservationI} options={{ title: 'Conservação de Energia' }} />
-			<Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
-		</Stack.Navigator>
-	);
-}
+import MyStack from './components/MyStack'
 
 class App extends React.Component {
 	render() {
