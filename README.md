@@ -1,7 +1,5 @@
 # CDPC
 
-<p>Altere o caminho em '/node_modules/expo/AppEntry.js/' de '../../App' para '../../screens/Home'
-
 ## Para navegação entre telas:
 
 https://reactnavigation.org/docs/getting-started
