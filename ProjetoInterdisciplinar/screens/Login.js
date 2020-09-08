@@ -43,6 +43,9 @@ class Login extends React.Component {
                     usersRef.doc(uid).get().then(firestoreDocument => {
                         if (!firestoreDocument.exists) {
                             alert("Esse usuário não existe")
+                            this.setState({
+                                isLoading: false,
+                            })
                         }
                         this.props.navigation.navigate('Home')
                         this.setState({
@@ -51,6 +54,9 @@ class Login extends React.Component {
                     })
                     .catch(error => {
                         alert(error)
+                        this.setState({
+                            isLoading: false,
+                        })
                     })
             })
                 .catch(error => {
