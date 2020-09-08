@@ -5,7 +5,6 @@ import Style from '../styles/CapacitationStyle'
 import DefaultStyle from '../styles/DefaultStyle'
 
 class Capacitation extends React.Component {
-
     render() {
         return (
             <ScrollView style={{ backgroundColor: "whitesmoke" }}>

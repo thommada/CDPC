@@ -1,7 +1,5 @@
 # CDPC
 
-<p>Altere o caminho em '/node_modules/expo/AppEntry.js/' de '../../App' para '../../screens/Home'
-
 ## Para navegação entre telas:
 
 https://reactnavigation.org/docs/getting-started
@@ -20,4 +18,3 @@ https://reactnavigation.org/docs/getting-started
 ### Instalando e adicionando o Firebase:
 
 <p><code>expo install firebase</code></p>
-<p><code>yarn add firebase</code></p>

@@ -1,22 +1,20 @@
 import React from 'react'
 import { Text, View, ActivityIndicator, Image } from 'react-native'
 
-import Style from '../styles/Loading'
+import LoadingStyle from '../styles/Loading'
 import DefaultStyle from '../styles/DefaultStyle'
 
 class Loading extends React.Component {
     render() {
         return (
-            <View style={DefaultStyle.containerCenter}>
-
+            <View style={LoadingStyle.containerLoading}>
+                
                 <Image
                     source={require('../assets/img/cdpc-circular.png')}
-                    style={Style.logo}
+                    style={DefaultStyle.logo}
                 ></Image>
-
-                <Text style={Style.loading}>Carregando...</Text>
-                <ActivityIndicator size='large'></ActivityIndicator>
-
+                
+                <ActivityIndicator size="large" color="#9E9E9E" />
             </View>
         )
     }

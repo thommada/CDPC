@@ -1,50 +1,68 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 
+import Loading from '../screens/Loading'
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
+
 import firebase from '../components/firebase/config'
 
 class Login extends React.Component {
     constructor() {
-        super();
+        super()
 
-        this.dbRef = firebase.firestore().collection('users');
+        this.dbRef = firebase.firestore().collection('users')
 
         this.state = {
             emailUser: '',
             password: '',
             isLoading: false
-        };
+        }
     }
 
     inputValueUpdate = (val, prop) => {
-        const state = this.state;
-        state[prop] = val;
-        this.setState(state);
+        const state = this.state
+        state[prop] = val
+        this.setState(state)
     }
 
-    onLoginPress(){
-        firebase.auth().signInWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
+    onLoginPress() {
+        if (this.state.emailUser === '' || this.state.password === '') {
+            alert('Verifique os dados e tente novamente')
+            this.setState({
+                isLoading: false,
+            })
+        } else {
+            this.setState({
+                isLoading: true,
+            })
+
+            firebase.auth().signInWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
                 const uid = response.user.uid
                 const usersRef = firebase.firestore().collection('users')
-                usersRef.doc(uid).get().then(firestoreDocument => {
-                    if (!firestoreDocument.exists) {
-                        alert("Esse usuário não existe")
-                        return;
-                    }
-                    this.props.navigation.navigate('Home')
-                })
+                    usersRef.doc(uid).get().then(firestoreDocument => {
+                        if (!firestoreDocument.exists) {
+                            alert("Esse usuário não existe")
+                        }
+                        this.props.navigation.navigate('Home')
+                    })
                     .catch(error => {
                         alert(error)
-                    });
+                    })
             })
-            .catch(error => {
-                alert(error)
-            })
+                .catch(error => {
+                    alert(error)
+                })
+        
+        }
     }
 
     render() {
+        if (this.state.isLoading) {
+            return (
+                <Loading />
+            )
+        }
         return (
             <View style={DefaultStyle.container}>
 
@@ -78,7 +96,7 @@ class Login extends React.Component {
                     </View>
                 </View>
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={DefaultStyle.button}
                     onPress={() => this.onLoginPress()}
                 >
