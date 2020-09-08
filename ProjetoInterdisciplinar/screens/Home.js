@@ -1,7 +1,10 @@
 import React from 'react'
-import { Text, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { Text, TouchableOpacity, Image, ScrollView, Alert } from 'react-native'
 
 import DefaultStyle from '../styles/DefaultStyle'
+
+import firebase from '../components/firebase/config'
+import { Button } from 'react-native-paper'
 
 class Home extends React.Component {
 	render() {
@@ -38,7 +41,7 @@ class Home extends React.Component {
 					<Text style={DefaultStyle.buttonText}>Capacitação</Text>
 				</TouchableOpacity>
 			</ScrollView>
-		);
+		)
 	}
 }
 export default Home

@@ -30,7 +30,7 @@ class MyStack extends React.Component {
                 <Stack.Screen name="EnergyConservationIScreen" component={EnergyConservationI} options={{ title: 'Conservação de Energia' }} />
                 <Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
             </Stack.Navigator>
-        );
+        )
     }
 }
 export default MyStack

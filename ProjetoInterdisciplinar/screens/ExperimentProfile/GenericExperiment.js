@@ -57,4 +57,4 @@ class GenericExperiment extends React.Component {
 		)
 	}
 }
-export default GenericExperiment;
+export default GenericExperiment

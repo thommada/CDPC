@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, TextInput, Image, ScrollView, ActivityIndicator } from 'react-native'
 
+import Loading from '../screens/Loading'
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
 
@@ -8,9 +9,9 @@ import firebase from '../components/firebase/config'
 
 class Register extends React.Component {
     constructor() {
-        super();
+        super()
 
-        this.dbRef = firebase.firestore().collection('users');
+        this.dbRef = firebase.firestore().collection('users')
 
         this.state = {
             nameUser: '',
@@ -27,13 +28,13 @@ class Register extends React.Component {
             referenceSchool: '',
             phoneSchool: '',
             isLoading: false
-        };
+        }
     }
 
     inputValueUpdate = (val, prop) => {
-        const state = this.state;
-        state[prop] = val;
-        this.setState(state);
+        const state = this.state
+        state[prop] = val
+        this.setState(state)
     }
 
     storeUser() {
@@ -41,17 +42,17 @@ class Register extends React.Component {
             alert('Verifique os dados e tente novamente')
             this.setState({
                 isLoading: false,
-            });
+            })
         } else {
             this.setState({
                 isLoading: true,
-            });
+            })
 
             if (this.state.password !== this.state.confirmPassword) {
                 alert("As senhas não coincidem")
                 this.setState({
                     isLoading: false,
-                });
+                })
             }
 
             firebase.auth().createUserWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
@@ -71,7 +72,7 @@ class Register extends React.Component {
                     neighborhoodSchool: this.state.neighborhoodSchool,
                     referenceSchool: this.state.referenceSchool,
                     phoneSchool: this.state.phoneSchool
-                };
+                }
                 this.dbRef.doc(uid).set(login).then(() => {
                     this.setState({
                         nameUser: '',
@@ -92,30 +93,24 @@ class Register extends React.Component {
                     this.props.navigation.navigate('Home')
                 }).catch((err) => {
                     alert(err)
-                    console.error("Error found: ", err);
+                    console.error("Error found: ", err)
                     this.setState({
                         isLoading: false,
-                    });
-                });
+                    })
+                })
             }).catch((error) => {
                 alert(error)
                 this.setState({
                     isLoading: false,
-                });
-            });
+                })
+            })
         }
     }
 
     render() {
         if (this.state.isLoading) {
             return (
-                <View style={{ left: 0, right: 0, top: 0, bottom: 0, position: 'absolute', alignItems: 'center', justifyContent: 'center' }}>
-                    <Image
-                        source={require('../assets/img/cdpc-circular.png')}
-                        style={DefaultStyle.logo}
-                    ></Image>
-                    <ActivityIndicator size="large" color="#9E9E9E" />
-                </View>
+                <Loading/>
             )
         }
         return (

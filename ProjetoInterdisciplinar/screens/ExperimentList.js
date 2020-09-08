@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, View, SafeAreaView, SectionList, TouchableOpacity } from 'react-native';
-import Style from '../styles/ExperimentListStyle';
-import DefaultStyle from '../styles/DefaultStyle';
+import React from 'react'
+import { Text, View, SafeAreaView, SectionList, TouchableOpacity } from 'react-native'
+import Style from '../styles/ExperimentListStyle'
+import DefaultStyle from '../styles/DefaultStyle'
 
 const physics = [
     { id: 101, title: 'Disco Flutuantes',  screen: 'FloatingDiskScreen'},
