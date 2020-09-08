@@ -45,6 +45,9 @@ class Login extends React.Component {
                             alert("Esse usuário não existe")
                         }
                         this.props.navigation.navigate('Home')
+                        this.setState({
+                            isLoading: false,
+                        })
                     })
                     .catch(error => {
                         alert(error)

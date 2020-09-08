@@ -40,6 +40,13 @@ class Home extends React.Component {
 				>
 					<Text style={DefaultStyle.buttonText}>Capacitação</Text>
 				</TouchableOpacity>
+
+				
+				<TouchableOpacity style={DefaultStyle.button}
+					onPress={() => this.props.navigation.navigate('LoginScreen')}
+				>
+					<Text style={DefaultStyle.buttonText}>Sair</Text>
+				</TouchableOpacity>
 			</ScrollView>
 		)
 	}
