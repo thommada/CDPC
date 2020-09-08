@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
+
 import firebase from '../components/firebase/config'
 
 class Login extends React.Component {

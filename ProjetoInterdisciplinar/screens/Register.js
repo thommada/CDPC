@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, TextInput, Image, ScrollView, ActivityInd
 
 import Style from '../styles/LoginRegister'
 import DefaultStyle from '../styles/DefaultStyle'
+
 import firebase from '../components/firebase/config'
 
 class Register extends React.Component {
