@@ -11,18 +11,19 @@ export default StyleSheet.create({
         fontWeight: "200",
     },
     box: {
-        flex: 6,
-        justifyContent: "center",
-        alignItems: "flex-start",
-        padding: 10,
+        flex: 7,
+        justifyContent: "space-evenly",
+        alignItems: "baseline",
+        paddingLeft: 30,
     },
     header: {
         fontSize: 26,
         fontWeight: "100",
     },
     boxheader: {
-        paddingTop: 20,
-        paddingLeft: 10,
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingBottom: 10,
 
     },
     text: {
