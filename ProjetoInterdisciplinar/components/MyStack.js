@@ -11,7 +11,7 @@ import Capacitation from '../screens/Capacitation'
 import FloatingDisk from '../screens/ExperimentProfile/Fisica/FloatingDisk'
 import EnergyConservationI from '../screens/ExperimentProfile/Fisica/EnergyConservationI'
 import MotionEnergy from '../screens/ExperimentProfile/Fisica/MotionEnergy'
-import GenericExperiment from '../screens/ExperimentProfile/GenericExperiment'
+import Experiment from '../screens/ExperimentProfile/Experiment'
 
 const Stack = createStackNavigator()
 class MyStack extends React.Component {
@@ -28,7 +28,7 @@ class MyStack extends React.Component {
                 <Stack.Screen name="FloatingDiskScreen" component={FloatingDisk} options={{ title: 'Disco Flutuante' }} />
                 <Stack.Screen name="MotionEnergyScreen" component={MotionEnergy} options={{ title: 'Energia de Movimento' }} />
                 <Stack.Screen name="EnergyConservationIScreen" component={EnergyConservationI} options={{ title: 'Conservação de Energia' }} />
-                <Stack.Screen name="GenericExperiment" component={GenericExperiment} options={{ title: 'Experimento Genérico' }} />
+                <Stack.Screen name="Experiment" component={Experiment} options={{ title: 'Experimento' }} />
             </Stack.Navigator>
         )
     }

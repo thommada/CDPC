@@ -102,7 +102,19 @@ export default class ExperimentList extends React.Component {
                         {
                             this.state.expPhy.map((item) => {
                                 return (
-                                    <Text style={Style.boxheader}>{item.title}</Text>
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate(
+                                            'Experiment',
+                                            {
+                                                exp_title: item.title,
+                                                exp_resume: item.resume,
+                                                exp_qualification: item.qualification,
+                                                exp_discip: item.discip,
+                                                exp_details: item.details,
+
+                                            })}>
+                                        <Text style={Style.boxheader}>{item.title}</Text>
+                                    </TouchableOpacity>
                                 );
                             })
                         }
@@ -110,7 +122,19 @@ export default class ExperimentList extends React.Component {
                         {
                             this.state.expChe.map((item) => {
                                 return (
-                                    <Text style={Style.boxheader}>{item.title}</Text>
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate(
+                                            'Experiment',
+                                            {
+                                                exp_title: item.title,
+                                                exp_resume: item.resume,
+                                                exp_qualification: item.qualification,
+                                                exp_discip: item.discip,
+                                                exp_details: item.details,
+
+                                            })}>
+                                        <Text style={Style.boxheader}>{item.title}</Text>
+                                    </TouchableOpacity>
                                 );
                             })
                         }
@@ -118,7 +142,19 @@ export default class ExperimentList extends React.Component {
                         {
                             this.state.expBio.map((item) => {
                                 return (
-                                    <Text style={Style.boxheader}>{item.title}</Text>
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate(
+                                            'Experiment',
+                                            {
+                                                exp_title: item.title,
+                                                exp_resume: item.resume,
+                                                exp_qualification: item.qualification,
+                                                exp_discip: item.discip,
+                                                exp_details: item.details,
+
+                                            })}>
+                                        <Text style={Style.boxheader}>{item.title}</Text>
+                                    </TouchableOpacity>
                                 );
                             })
                         }
@@ -126,13 +162,25 @@ export default class ExperimentList extends React.Component {
                         {
                             this.state.expMat.map((item) => {
                                 return (
-                                    <Text style={Style.boxheader}>{item.title}</Text>
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate(
+                                            'Experiment',
+                                            {
+                                                exp_title: item.title,
+                                                exp_resume: item.resume,
+                                                exp_qualification: item.qualification,
+                                                exp_discip: item.discip,
+                                                exp_details: item.details,
+
+                                            })}>
+                                        <Text style={Style.boxheader}>{item.title}</Text>
+                                    </TouchableOpacity>
                                 );
                             })
                         }
                     </ScrollView>
                 </View>
-            </View>
+            </View >
             /*
                 <View style={DefaultStyle.container}>
                            
