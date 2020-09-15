@@ -90,6 +90,7 @@ class Register extends React.Component {
                         phoneSchool: '',
                         isLoading: false
                     })
+                    alert('Cadastro realizado com sucesso!')
                     this.props.navigation.navigate('Home')
                 }).catch((err) => {
                     alert(err)
