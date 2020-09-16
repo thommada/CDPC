@@ -36,49 +36,53 @@ export default class ExperimentList extends React.Component {
 
         querySnapshot.forEach((res) => {
             const { title, resume, qualification, discip, details } = res.data();
-
-            /****  DEVE TER UM JEITO MELHOR DO QUE USAR OS IF/ELSE TIPO UM "switch case"  ****/
-
-            if (discip == 'quimica') {
-                expChe.push({
-                    key: res.id,
-                    res,
-                    title,
-                    resume,
-                    qualification,
-                    discip,
-                    details,
-                });
-            } else if (discip == 'fisica') {
-                expPhy.push({
-                    key: res.id,
-                    res,
-                    title,
-                    resume,
-                    qualification,
-                    discip,
-                    details,
-                });
-            } else if (discip == 'biologia') {
-                expBio.push({
-                    key: res.id,
-                    res,
-                    title,
-                    resume,
-                    qualification,
-                    discip,
-                    details,
-                });
-            } else if (discip == 'matematica') {
-                expMat.push({
-                    key: res.id,
-                    res,
-                    title,
-                    resume,
-                    qualification,
-                    discip,
-                    details,
-                });
+            switch (discip) {
+                case 'quimica':
+                    expChe.push({
+                        key: res.id,
+                        res,
+                        title,
+                        resume,
+                        qualification,
+                        discip,
+                        details,
+                    });
+                    break;
+                case 'fisica':
+                    expPhy.push({
+                        key: res.id,
+                        res,
+                        title,
+                        resume,
+                        qualification,
+                        discip,
+                        details,
+                    });
+                    break;
+                case 'biologia':
+                    expBio.push({
+                        key: res.id,
+                        res,
+                        title,
+                        resume,
+                        qualification,
+                        discip,
+                        details,
+                    });
+                    break;
+                case 'matematica':
+                    expMat.push({
+                        key: res.id,
+                        res,
+                        title,
+                        resume,
+                        qualification,
+                        discip,
+                        details,
+                    });
+                    break;
+                default:
+                // code block
             }
         });
         this.setState({
