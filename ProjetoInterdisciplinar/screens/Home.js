@@ -4,9 +4,15 @@ import { Text, TouchableOpacity, Image, ScrollView, Alert } from 'react-native'
 import DefaultStyle from '../styles/DefaultStyle'
 
 import firebase from '../components/firebase/config'
-import { Button } from 'react-native-paper'
 
 class Home extends React.Component {
+
+	onSignOutPress() {
+		alert('Você foi deslogado com sucesso.\nAté mais!')
+		firebase.auth().signOut()
+		this.props.navigation.navigate('LoginScreen')
+	}
+
 	render() {
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke", marginTop: 50 }}>
@@ -15,7 +21,7 @@ class Home extends React.Component {
 					style={DefaultStyle.logo}
 				></Image>
 
-				<Text style={DefaultStyle.textCenter}>{`Seja Bem vindo (a) ao Portal do\n Centro de Divulgação e Popularização da Ciência`}</Text>
+				<Text style={DefaultStyle.textCenter}>{`Seja Bem vindo (a) ao Portal do\nCentro de Divulgação e Popularização da Ciência`}</Text>
 
 				<TouchableOpacity style={DefaultStyle.button}
 					onPress={() => this.props.navigation.navigate('AboutScreen')}
@@ -43,7 +49,7 @@ class Home extends React.Component {
 
 				
 				<TouchableOpacity style={DefaultStyle.button}
-					onPress={() => this.props.navigation.navigate('LoginScreen')}
+					onPress={() => this.onSignOutPress()}
 				>
 					<Text style={DefaultStyle.buttonText}>Sair</Text>
 				</TouchableOpacity>

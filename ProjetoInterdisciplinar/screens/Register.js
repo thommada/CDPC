@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, TextInput, Image, ScrollView, ActivityIndicator } from 'react-native'
+import { Text, View, TouchableOpacity, TextInput, Image, ScrollView, Alert } from 'react-native'
 
 import Loading from '../screens/Loading'
 import Style from '../styles/LoginRegister'
@@ -38,8 +38,184 @@ class Register extends React.Component {
     }
 
     storeUser() {
-        if (this.state.nameUser === '' || this.state.emailUser === '' || this.state.password === '' || this.state.confirmPassword === '') {
-            alert('Verifique os dados e tente novamente')
+        if (this.state.emailUser === '') {
+            Alert.alert(
+                'Informações de login',
+                "O campo 'E-mail' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.password === '') {
+            Alert.alert(
+                'Informações de login',
+                "O campo 'Senha' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.confirmPassword === '') {
+            Alert.alert(
+                'Informações de login',
+                "O campo 'Confirme a senha' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.nameUser === '') {
+            Alert.alert(
+                'Dados pessoais',
+                "O campo 'Nome completo' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.cpfUser === '') {
+            Alert.alert(
+                'Dados pessoais',
+                "O campo 'CPF' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.cellUser === '') {
+            Alert.alert(
+                'Dados pessoais',
+                "O campo 'Celular' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.nameSchool === '') {
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'Nome' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.cepSchool === '') {
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'CEP' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.streetSchool === '') {
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'Logradouro' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.numberSchool === '') {
+            alert()
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'Número' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.neighborhoodSchool === '') {
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'Bairro' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.phoneSchool === '') {
+            Alert.alert(
+                'Dados da escola',
+                "O campo 'Telefone' é obrigatório!",
+                [
+                    { 
+                        text: 'OK', 
+                        onPress: () => console.log('OK Pressed') 
+                    }
+                ],
+                { cancelable: true }
+            )
             this.setState({
                 isLoading: false,
             })
@@ -47,7 +223,6 @@ class Register extends React.Component {
             this.setState({
                 isLoading: true,
             })
-
             if (this.state.password !== this.state.confirmPassword) {
                 alert("As senhas não coincidem")
                 this.setState({
@@ -111,7 +286,7 @@ class Register extends React.Component {
     render() {
         if (this.state.isLoading) {
             return (
-                <Loading/>
+                <Loading />
             )
         }
         return (
@@ -132,12 +307,12 @@ class Register extends React.Component {
 
                     <View style={{ marginTop: 32 }}>
                         <Text style={{ color: 'red' }}>*
-                            <Text style={Style.inputTitle}> Email</Text>
+                            <Text style={Style.inputTitle}> E-mail</Text>
                         </Text>
                         <TextInput
                             style={Style.input}
                             autoCapitalize='none'
-                            placeholder='Digite o seu email'
+                            placeholder='Digite o seu e-mail'
                             value={this.state.emailUser}
                             onChangeText={(val) => this.inputValueUpdate(val, 'emailUser')}>
                         </TextInput>

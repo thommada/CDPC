@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
+import { Text, View, TouchableOpacity, TextInput, Image, Alert } from 'react-native'
 
 import Loading from '../screens/Loading'
 import Style from '../styles/LoginRegister'
@@ -27,8 +27,33 @@ class Login extends React.Component {
     }
 
     onLoginPress() {
-        if (this.state.emailUser === '' || this.state.password === '') {
-            alert('Verifique os dados e tente novamente')
+        if (this.state.emailUser === '') {
+            Alert.alert(
+                'Informações de login',
+                "O campo 'E-mail' é obrigatório!",
+                [
+                    {
+                        text: 'OK',
+                        onPress: () => console.log('OK Pressed')
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.password === '') {
+            Alert.alert(
+                'Informações de login',
+                "O campo 'Senha' é obrigatório!",
+                [
+                    {
+                        text: 'OK',
+                        onPress: () => console.log('OK Pressed')
+                    }
+                ],
+                { cancelable: true }
+            )
             this.setState({
                 isLoading: false,
             })
@@ -40,29 +65,31 @@ class Login extends React.Component {
             firebase.auth().signInWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
                 const uid = response.user.uid
                 const usersRef = firebase.firestore().collection('users')
-                    usersRef.doc(uid).get().then(firestoreDocument => {
-                        if (!firestoreDocument.exists) {
-                            alert("Esse usuário não existe")
-                            this.setState({
-                                isLoading: false,
-                            })
-                        }
-                        this.props.navigation.navigate('Home')
+                usersRef.doc(uid).get().then(firestoreDocument => {
+                    if (!firestoreDocument.exists) {
+                        alert("Este usuário não existe")
                         this.setState({
                             isLoading: false,
                         })
+                    }
+                    alert("Login realizado com sucesso!\nSeja bem vindo (a)")
+                    this.props.navigation.navigate('Home')
+                    this.setState({
+                        isLoading: false,
                     })
-                    .catch(error => {
-                        alert(error)
-                        this.setState({
-                            isLoading: false,
-                        })
+                }).catch(error => {
+                    this.setState({
+                        isLoading: false,
                     })
-            })
-                .catch(error => {
                     alert(error)
                 })
-        
+            }).catch(error => {
+                this.setState({
+                    isLoading: false,
+                })
+                alert(error)
+            })
+
         }
     }
 
@@ -84,11 +111,11 @@ class Login extends React.Component {
 
                 <View style={Style.form}>
                     <View>
-                        <Text style={Style.inputTitle}>Email</Text>
+                        <Text style={Style.inputTitle}>E-mail</Text>
                         <TextInput
                             style={Style.input}
                             autoCapitalize='none'
-                            placeholder='Digite o seu email'
+                            placeholder='Digite o seu e-mail'
                             value={this.state.emailUser}
                             onChangeText={(val) => this.inputValueUpdate(val, 'emailUser')}>
                         </TextInput>
