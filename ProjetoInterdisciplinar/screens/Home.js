@@ -24,12 +24,6 @@ class Home extends React.Component {
 				<Text style={DefaultStyle.textCenter}>{`Seja Bem vindo (a) ao Portal do\nCentro de Divulgação e Popularização da Ciência`}</Text>
 
 				<TouchableOpacity style={DefaultStyle.button}
-					onPress={() => this.props.navigation.navigate('AboutScreen')}
-				>
-					<Text style={DefaultStyle.buttonText}>Saiba mais sobre o CDPC</Text>
-				</TouchableOpacity>
-
-				<TouchableOpacity style={DefaultStyle.button}
 					onPress={() => this.props.navigation.navigate('ExperimentListScreen')}
 				>
 					<Text style={DefaultStyle.buttonText}>Experimentoteca</Text>
@@ -42,12 +36,11 @@ class Home extends React.Component {
 				</TouchableOpacity>
 
 				<TouchableOpacity style={DefaultStyle.button}
-					onPress={() => this.props.navigation.navigate('CapacitationScreen')}
+					onPress={() => this.props.navigation.navigate('AboutScreen')}
 				>
-					<Text style={DefaultStyle.buttonText}>Capacitação</Text>
+					<Text style={DefaultStyle.buttonText}>Saiba mais sobre o CDPC</Text>
 				</TouchableOpacity>
 
-				
 				<TouchableOpacity style={DefaultStyle.button}
 					onPress={() => this.onSignOutPress()}
 				>

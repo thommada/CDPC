@@ -75,7 +75,7 @@ class Experiment extends React.Component{
 
 					<Text style={Style.subtitle}>Mais Detalhes</Text>
 					<TouchableOpacity
-						onPress={() => Linking.openURL({exp_details})}
+						onPress={() => Linking.openURL(exp_details)}
 					>
 						<Text style={DefaultStyle.link}>{exp_title}</Text>
 					</TouchableOpacity>
