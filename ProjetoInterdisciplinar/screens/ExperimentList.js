@@ -39,8 +39,7 @@ export default class ExperimentList extends React.Component {
             switch (discip) {
                 case 'quimica':
                     expChe.push({
-                        key: res.id,
-                        res,
+                        key: id,
                         title,
                         resume,
                         qualification,
@@ -54,8 +53,7 @@ export default class ExperimentList extends React.Component {
                     break;
                 case 'fisica':
                     expPhy.push({
-                        key: res.id,
-                        res,
+                        key: id,
                         title,
                         resume,
                         qualification,
@@ -69,8 +67,7 @@ export default class ExperimentList extends React.Component {
                     break;
                 case 'biologia':
                     expBio.push({
-                        key: res.id,
-                        res,
+                        key: id,
                         title,
                         resume,
                         qualification,
@@ -84,8 +81,7 @@ export default class ExperimentList extends React.Component {
                     break;
                 case 'matematica':
                     expMat.push({
-                        key: res.id,
-                        res,
+                        key: id,
                         title,
                         resume,
                         qualification,
