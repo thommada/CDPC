@@ -32,15 +32,20 @@ class Experiment extends React.Component{
         };
 	}
 
-	onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id) {
+	onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id, exp_title, exp_pdfTuto, exp_videoTuto) {
 		console.log("exp_qualification----> " +exp_disponibilidade);
 		if (exp_disponibilidade) {
 			if(exp_qualification){
-				this.props.navigation.navigate('CapacitationScreen')
+				this.props.navigation.navigate('CapacitationScreen',
+					{
+						title: exp_title,
+						videoTuto: exp_videoTuto,
+						pdfTuto: exp_pdfTuto,
+					})
 			}
 			else{
-				alert("Empréstimo realizado com sucesso, as informações serão enviadas para seu email cadastrado.")
 				db.collection("experiments").doc(exp_id).update({disponibilidade:false});
+				alert("Empréstimo realizado com sucesso, as informações serão enviadas para seu email cadastrado.")
 			}
 		} else {
 			alert("Experimento indisponivel no momento.")
@@ -48,7 +53,7 @@ class Experiment extends React.Component{
 	}
 	
 	render() {
-		const { exp_title, exp_resume, exp_discip, exp_disponibilidade, exp_id, exp_qualification, exp_details}  = this.props.route.params;
+		const { exp_title, exp_resume, exp_discip, exp_pdfTuto, exp_disponibilidade, exp_id, exp_qualification, exp_details, exp_videoTuto}  = this.props.route.params;
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
@@ -77,7 +82,7 @@ class Experiment extends React.Component{
 
 					<TouchableOpacity
                     style={DefaultStyle.button}
-                    onPress={() => this.onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id)}
+                    onPress={() => this.onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id, exp_title, exp_pdfTuto, exp_videoTuto)}
                 	>
                     <Text style={DefaultStyle.buttonText}>Realizar emprestimo</Text>
                 	</TouchableOpacity>

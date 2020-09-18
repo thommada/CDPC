@@ -6,23 +6,24 @@ import DefaultStyle from '../styles/DefaultStyle'
 
 class Capacitation extends React.Component {
     render() {
+        const { title, pdfTuto, videoTuto}  = this.props.route.params;
         return (
             <ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
-                <Text style={DefaultStyle.title}>Disco Flutuante</Text>
+                <Text style={DefaultStyle.title}>{title}</Text>
 
-                <Text style={DefaultStyle.text}>Para realizar o empréstimo do FIS-Disco Flutuante, é necessário realizar um
+                <Text style={DefaultStyle.text}>Para realizar o empréstimo deste experimento, é necessário realizar um
                 treinamento de capacitação.</Text>
 
                 <Text style={DefaultStyle.text}>Basta estudar o conteúdo abaixo e realizar um teste no final.</Text>
 
                 <Text style={Style.linkCenter}
-                    onPress={() => Linking.openURL('https://americalatina.dint.fgv.br/sites/americalatina.dint.fgv.br/files/teste33.pdf')}>
+                    onPress={() => Linking.openURL(pdfTuto)}>
                     {'Baixar tutorial em .pdf'}
                 </Text>
 
                 <Text style={Style.linkCenter}
-                    onPress={() => Linking.openURL('https://www.youtube.com/embed/umo8NxvyB8g')}>
+                    onPress={() => Linking.openURL(videoTuto)}>
                     {'Assistir vídeo tutorial'}
                 </Text>
 

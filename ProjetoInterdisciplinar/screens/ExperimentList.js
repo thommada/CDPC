@@ -35,7 +35,7 @@ export default class ExperimentList extends React.Component {
         const expMat = [];
 
         querySnapshot.forEach((res) => {
-            const { title, resume, qualification, id, disponibilidade, discip, details } = res.data();
+            const { videoTuto, title, resume, qualification, id, pdfTuto, disponibilidade, discip, details } = res.data();
             switch (discip) {
                 case 'quimica':
                     expChe.push({
@@ -44,10 +44,12 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        pdfTuto,
                         id,
                         disponibilidade,
                         discip,
                         details,
+                        videoTuto,
                     });
                     break;
                 case 'fisica':
@@ -57,10 +59,12 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        pdfTuto,
                         id,
                         disponibilidade,
                         discip,
                         details,
+                        videoTuto,
                     });
                     break;
                 case 'biologia':
@@ -70,10 +74,12 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        pdfTuto,
                         id,
                         disponibilidade,
                         discip,
                         details,
+                        videoTuto,
                     });
                     break;
                 case 'matematica':
@@ -83,10 +89,12 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        pdfTuto,
                         id,
                         disponibilidade,
                         discip,
                         details,
+                        videoTuto,
                     });
                     break;
                 default:
@@ -121,10 +129,12 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_pdfTuto: item.pdfTuto,
                                                 exp_id: item.id,
                                                 exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
+                                                exp_videoTuto: item.videoTuto,
 
                                             })}>
                                         <Text style={Style.boxheader}>{item.title}</Text>
@@ -144,10 +154,12 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_pdfTuto: item.pdfTuto,
                                                 exp_id: item.id,
                                                 exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
+                                                exp_videoTuto: item.videoTuto,
 
                                             })}>
                                         <Text style={Style.boxheader}>{item.title}</Text>
@@ -166,10 +178,12 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_pdfTuto: item.pdfTuto,
                                                 exp_id: item.id,
                                                 exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
+                                                exp_videoTuto: item.videoTuto,
 
                                             })}>
                                         <Text style={Style.boxheader}>{item.title}</Text>
@@ -188,10 +202,12 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_pdfTuto: item.pdfTuto,
                                                 exp_id: item.id,
                                                 exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
+                                                exp_videoTuto: item.videoTuto,
 
                                             })}>
                                         <Text style={Style.boxheader}>{item.title}</Text>
