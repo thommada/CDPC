@@ -43,9 +43,8 @@ class Register extends React.Component {
                 'Informações de login',
                 "O campo 'E-mail' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -58,9 +57,8 @@ class Register extends React.Component {
                 'Informações de login',
                 "O campo 'Senha' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -73,9 +71,22 @@ class Register extends React.Component {
                 'Informações de login',
                 "O campo 'Confirme a senha' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
+                    }
+                ],
+                { cancelable: true }
+            )
+            this.setState({
+                isLoading: false,
+            })
+        } else if (this.state.password !== this.state.confirmPassword) {
+            Alert.alert(
+                'Informações de login',
+                "As senhas não coincidem!",
+                [
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -88,9 +99,8 @@ class Register extends React.Component {
                 'Dados pessoais',
                 "O campo 'Nome completo' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -103,9 +113,8 @@ class Register extends React.Component {
                 'Dados pessoais',
                 "O campo 'CPF' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -118,9 +127,8 @@ class Register extends React.Component {
                 'Dados pessoais',
                 "O campo 'Celular' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -133,9 +141,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'Nome' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -148,9 +155,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'CEP' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -163,9 +169,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'Logradouro' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -179,9 +184,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'Número' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -194,9 +198,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'Bairro' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -209,9 +212,8 @@ class Register extends React.Component {
                 'Dados da escola',
                 "O campo 'Telefone' é obrigatório!",
                 [
-                    { 
-                        text: 'OK', 
-                        onPress: () => console.log('OK Pressed') 
+                    {
+                        text: 'OK',
                     }
                 ],
                 { cancelable: true }
@@ -223,13 +225,6 @@ class Register extends React.Component {
             this.setState({
                 isLoading: true,
             })
-            if (this.state.password !== this.state.confirmPassword) {
-                alert("As senhas não coincidem")
-                this.setState({
-                    isLoading: false,
-                })
-            }
-
             firebase.auth().createUserWithEmailAndPassword(this.state.emailUser, this.state.password).then((response) => {
                 const uid = response.user.uid
                 const login = {
