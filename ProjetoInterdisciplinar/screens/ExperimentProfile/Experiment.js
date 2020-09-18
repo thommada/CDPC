@@ -5,6 +5,8 @@ import Slider from '../../components/Slider'
 import Style from '../../styles/Experiment'
 import DefaultStyle from '../../styles/DefaultStyle'
 
+import firebase from '../../components/firebase/config';
+
 const images = [
 	require('../../assets/img/fotoex1.png'),
 	require('../../assets/img/fotoex2.png'),
@@ -18,9 +20,35 @@ const verifyCapacitation = (verification) =>{
 
 }
 
+var db = firebase.firestore();
+
 class Experiment extends React.Component{
+
+	constructor() {
+        super();
+        this.firestoreChe = firebase.firestore().collection('experiments');
+        this.state = {
+			isLoading: false,
+        };
+	}
+
+	onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id) {
+		console.log("exp_qualification----> " +exp_disponibilidade);
+		if (exp_disponibilidade) {
+			if(exp_qualification){
+				this.props.navigation.navigate('CapacitationScreen')
+			}
+			else{
+				alert("Empréstimo realizado com sucesso, as informações serão enviadas para seu email cadastrado.")
+				db.collection("experiments").doc(exp_id).update({disponibilidade:false});
+			}
+		} else {
+			alert("Experimento indisponivel no momento.")
+		}
+	}
+	
 	render() {
-		const { exp_title, exp_resume, exp_discip, exp_qualification, exp_details}  = this.props.route.params;
+		const { exp_title, exp_resume, exp_discip, exp_disponibilidade, exp_id, exp_qualification, exp_details}  = this.props.route.params;
 		return (
 			<ScrollView style={{ backgroundColor: "whitesmoke" }}>
 
@@ -47,9 +75,12 @@ class Experiment extends React.Component{
 						<Text style={DefaultStyle.link}>{exp_title}</Text>
 					</TouchableOpacity>
 
-					<TouchableOpacity style={DefaultStyle.button}>
-						<Text style={DefaultStyle.buttonText}>Realizar Empréstimo</Text>
-					</TouchableOpacity>
+					<TouchableOpacity
+                    style={DefaultStyle.button}
+                    onPress={() => this.onEmprestimoPress(exp_qualification, exp_disponibilidade, exp_id)}
+                	>
+                    <Text style={DefaultStyle.buttonText}>Realizar emprestimo</Text>
+                	</TouchableOpacity>
 				</View>
 
 			</ScrollView>

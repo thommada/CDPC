@@ -26,7 +26,7 @@ class Capacitation extends React.Component {
                     {'Assistir vídeo tutorial'}
                 </Text>
 
-                <TouchableOpacity style={DefaultStyle.button}>
+                <TouchableOpacity style={DefaultStyle.button} onPress={() => alert("Um email com mais informações será enviado para seu email cadastrado")}>
                     <Text style={DefaultStyle.buttonText}>Fazer o Teste</Text>
                 </TouchableOpacity>
 

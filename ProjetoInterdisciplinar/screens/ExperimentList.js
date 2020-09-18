@@ -35,7 +35,7 @@ export default class ExperimentList extends React.Component {
         const expMat = [];
 
         querySnapshot.forEach((res) => {
-            const { title, resume, qualification, discip, details } = res.data();
+            const { title, resume, qualification, id, disponibilidade, discip, details } = res.data();
             switch (discip) {
                 case 'quimica':
                     expChe.push({
@@ -44,6 +44,8 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        id,
+                        disponibilidade,
                         discip,
                         details,
                     });
@@ -55,6 +57,8 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        id,
+                        disponibilidade,
                         discip,
                         details,
                     });
@@ -66,6 +70,8 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        id,
+                        disponibilidade,
                         discip,
                         details,
                     });
@@ -77,6 +83,8 @@ export default class ExperimentList extends React.Component {
                         title,
                         resume,
                         qualification,
+                        id,
+                        disponibilidade,
                         discip,
                         details,
                     });
@@ -113,6 +121,8 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_id: item.id,
+                                                exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
 
@@ -122,6 +132,7 @@ export default class ExperimentList extends React.Component {
                                 );
                             })
                         }
+                        
                         <Text style={Style.header}>Química</Text>
                         {
                             this.state.expChe.map((item) => {
@@ -133,6 +144,8 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_id: item.id,
+                                                exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
 
@@ -153,6 +166,8 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_id: item.id,
+                                                exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
 
@@ -173,6 +188,8 @@ export default class ExperimentList extends React.Component {
                                                 exp_title: item.title,
                                                 exp_resume: item.resume,
                                                 exp_qualification: item.qualification,
+                                                exp_id: item.id,
+                                                exp_disponibilidade: item.disponibilidade,
                                                 exp_discip: item.discip,
                                                 exp_details: item.details,
 
